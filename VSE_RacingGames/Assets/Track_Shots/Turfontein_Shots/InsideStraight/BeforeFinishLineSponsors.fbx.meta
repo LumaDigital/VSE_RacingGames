@@ -1,0 +1,123 @@
+fileFormatVersion: 2
+guid: b1c45d2358730f14ea6a01af258d1b74
+ModelImporter:
+  fileIDToRecycleName:
+    4300000: grid
+    4300002: grid1
+    4300004: grid2
+    4300006: grid3
+    4300008: BeforeFinishLine:polymsh1
+    4300010: cylinder4
+    4300012: cylinder5
+    4300014: Mesh_cube26
+    4300016: Mesh_cube25_001
+    4300018: polymsh8
+    4300020: polymsh10
+    4300022: polymsh12
+    4300024: polymsh_detached1
+    4300026: cylinder6
+    4300028: cylinder7
+    4300030: Mesh_cube27
+    4300032: Mesh_cube25_2
+    4300034: polymsh13
+    4300036: polymsh14
+    4300038: polymsh15
+    4300040: polymsh_detached2
+    4300042: polymsh_detached3
+    4300044: Billbaord20
+    4300046: Billbaord21
+    4300048: Billbaord22
+    4300050: Billbaord23
+  serializedVersion: 10
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    generateAnimations: 3
+    bakeSimulation: 0
+    splitAnimations: 1
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMesh: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  textMetaNamesToFileIDs:
+    //RootNode:
+      data:
+        first: 1
+        second: a2860100
+      data:
+        first: 4
+        second: 821a0600
+    Billbaord20:
+      data:
+        first: 1
+        second: a8860100
+      data:
+        first: 4
+        second: 881a0600
+      data:
+        first: 23
+        second: 66182300
+      data:
+        first: 33
+        second: a65a3200
+    Billbaord21:
+      data:
+        first: 1
+        second: a4860100
+      data:
+        first: 4
+        second: 841a0600
+      data:
+        first: 23
+        second: 62182300
+      data:
+        first: 33
+        second: a25a3200
+    Billbaord22:
+      data:
+        first: 1
+        second: a6860100
+      data:
+        first: 4
+        second: 861a0600
+      data:
+        first: 23
+        second: 64182300
+      data:
+        first: 33
+        second: a45a3200
+    Billbaord23:
+      data:
+        first: 1
+        second: a0860100
+      data:
+        first: 4
+        second: 801a0600
+      data:
+        first: 23
+        second: 60182300
+      data:
+        first: 33
+        second: a05a3200
