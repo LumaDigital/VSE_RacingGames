@@ -1,0 +1,321 @@
+Using pre-set license
+Built from '2022.1/staging' branch; Version is '2022.1.4f1 (76dd1f94b339) revision 7789855'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19043) 64bit Professional' Language: 'en' Physical Memory: 16340 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.1.4f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/WORK/Repositories/VSE_RacingGames.git/VSE_RacingGames
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+50600
+Successfully changed project path to: C:/WORK/Repositories/VSE_RacingGames.git/VSE_RacingGames
+C:/WORK/Repositories/VSE_RacingGames.git/VSE_RacingGames
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 253.40 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.1.4f1 (76dd1f94b339)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.1.4f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/WORK/Repositories/VSE_RacingGames.git/VSE_RacingGames/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 760 (ID=0x1187)
+    Vendor:   NVIDIA
+    VRAM:     2007 MB
+    Driver:   30.0.14.7381
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.1.4f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.1.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.1.4f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56632
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.1.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.024602 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 184.18 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.421 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1422ms)
+		BeginReloadAssembly (192ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (965ms)
+			LoadAssemblies (185ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (292ms)
+				TypeCache.Initialize (290ms)
+					TypeCache.ScanAssembly (287ms)
+				ResolveRequiredComponents (1ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (49ms)
+			SetupLoadedEditorAssemblies (522ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (17ms)
+				SetLoadedEditorAssemblies (10ms)
+				RefreshPlugins (184ms)
+				BeforeProcessingInitializeOnLoad (3ms)
+				ProcessInitializeOnLoadAttributes (222ms)
+				ProcessInitializeOnLoadMethodAttributes (85ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.023100 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\WORK\Repositories\VSE_RacingGames.git\VSE_RacingGames\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\WORK\Repositories\VSE_RacingGames.git\VSE_RacingGames\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 177.98 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.426 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2428ms)
+		BeginReloadAssembly (229ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (1982ms)
+			LoadAssemblies (190ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (549ms)
+				TypeCache.Initialize (526ms)
+					TypeCache.ScanAssembly (517ms)
+				ResolveRequiredComponents (23ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (132ms)
+			SetupLoadedEditorAssemblies (1027ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (7ms)
+				RefreshPlugins (178ms)
+				BeforeProcessingInitializeOnLoad (239ms)
+				ProcessInitializeOnLoadAttributes (453ms)
+				ProcessInitializeOnLoadMethodAttributes (120ms)
+				AfterProcessingInitializeOnLoad (19ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 1.32 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5457 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 48 unused Assets / (420.4 KB). Loaded Objects now: 5912.
+Memory consumption went from 0.84 GB to 0.84 GB.
+Total: 7.093600 ms (FindLiveObjects: 0.722700 ms CreateObjectMapping: 0.481600 ms MarkObjects: 5.579600 ms  DeleteObjects: 0.307200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1070879.260162 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000_Part4.mat
+  artifactKey: Guid(c4f0bea8dd7164944a6025c9c1a81e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000_Part4.mat using Guid(c4f0bea8dd7164944a6025c9c1a81e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce2792a7d849ac86c75db1c830158c7a') in 0.712909 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_01.jpg
+  artifactKey: Guid(883ba744953499148a602a583bafac17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_01.jpg using Guid(883ba744953499148a602a583bafac17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10ce875da8013eace187b65f2ad1e7a0') in 0.125807 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000_Part2.mat
+  artifactKey: Guid(ca8fa068f92ddc348bd5346a5ef6603c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000_Part2.mat using Guid(ca8fa068f92ddc348bd5346a5ef6603c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0c8a5bedba49aa44e1159e7af8b9d30') in 0.139451 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000_Part3.mat
+  artifactKey: Guid(c6dc416212a0d3e49ba90a7baedbe7eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000_Part3.mat using Guid(c6dc416212a0d3e49ba90a7baedbe7eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fc71be3afe8312d9360ff11708d3231') in 0.049265 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000_Part1.mat
+  artifactKey: Guid(f7003e522bf0e944fa0b5036a5aec44b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000_Part1.mat using Guid(f7003e522bf0e944fa0b5036a5aec44b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f796652546c314a8b27e25d96b8646ba') in 0.036236 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/1000mCornerStart.fbx
+  artifactKey: Guid(fbc5e8bd5ecf4834ebd4f97820c578e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/1000mCornerStart.fbx using Guid(fbc5e8bd5ecf4834ebd4f97820c578e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b43f8038441fd74313811f0ee8422b16') in 0.578615 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_03.jpg
+  artifactKey: Guid(0838405dd2142824796b879d565d4a82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_03.jpg using Guid(0838405dd2142824796b879d565d4a82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00efb3c48bd96be7d7d1c6c209878071') in 0.027862 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Foreground_Railing.fbx
+  artifactKey: Guid(eec8b2b2efb41f548b217fc3a46f51c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Foreground_Railing.fbx using Guid(eec8b2b2efb41f548b217fc3a46f51c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0114b6c97521a85025d4ec9d6f20c7f') in 0.022299 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000.mat
+  artifactKey: Guid(b7b2f3cc1becc9b42a906dbe5b62e6e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000.mat using Guid(b7b2f3cc1becc9b42a906dbe5b62e6e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c6766a2c8ace2689e74017ef3efdddd') in 0.035004 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/1000m_Railing_Foreground.mat
+  artifactKey: Guid(2b198c1436d152b489fd041510a20c15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/1000m_Railing_Foreground.mat using Guid(2b198c1436d152b489fd041510a20c15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1151dddccc135c9e630c2f4a2a912a00') in 0.024887 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/1000m_Railing_Foreground_Alpha.png
+  artifactKey: Guid(bf98a46734ccd62499a3a733c0b3a451) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/1000m_Railing_Foreground_Alpha.png using Guid(bf98a46734ccd62499a3a733c0b3a451) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9da369f54af3226bbee3c02c9df11f66') in 0.048014 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part3.jpg
+  artifactKey: Guid(08a5892a58091df4d98a1831f2b6389f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part3.jpg using Guid(08a5892a58091df4d98a1831f2b6389f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61945effcb2c2c009cf0aa9fbfddcaad') in 0.022160 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part2.jpg
+  artifactKey: Guid(e41ba07053f014a4b8e3746632966b35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part2.jpg using Guid(e41ba07053f014a4b8e3746632966b35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce88aec15cfd3f3e33f200f67121df0b') in 0.039255 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.693139 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_01.jpg
+  artifactKey: Guid(883ba744953499148a602a583bafac17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_01.jpg using Guid(883ba744953499148a602a583bafac17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48981882e804f527fa987f3365399f71') in 0.038213 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.374777 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04.jpg
+  artifactKey: Guid(10bc9bff7a2b82647bebad73637183be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04.jpg using Guid(10bc9bff7a2b82647bebad73637183be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d569731f5917cf4ffe165a4b9ebe6b1') in 0.287892 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.951762 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part1.jpg
+  artifactKey: Guid(4360203e200de7246ae3702b12395e39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part1.jpg using Guid(4360203e200de7246ae3702b12395e39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ef2ff7b6616bbf5503cf53dea3501e0') in 0.024018 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.374146 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part1.jpg
+  artifactKey: Guid(4360203e200de7246ae3702b12395e39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part1.jpg using Guid(4360203e200de7246ae3702b12395e39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a42ed75ef44e223421347f99a22e285') in 0.023782 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.158325 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part1.jpg
+  artifactKey: Guid(4360203e200de7246ae3702b12395e39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part1.jpg using Guid(4360203e200de7246ae3702b12395e39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cc08c94dfc9b6cfb19d8be971570279') in 0.068519 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.312828 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000_Part1.mat
+  artifactKey: Guid(f7003e522bf0e944fa0b5036a5aec44b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000_Part1.mat using Guid(f7003e522bf0e944fa0b5036a5aec44b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e261d806ec1d3cd2c80a3d18be392e0') in 0.081728 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.025704 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part2.jpg
+  artifactKey: Guid(e41ba07053f014a4b8e3746632966b35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part2.jpg using Guid(e41ba07053f014a4b8e3746632966b35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1cb81d484169e289ec701825d6820ac') in 0.114100 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.849273 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part2.jpg
+  artifactKey: Guid(e41ba07053f014a4b8e3746632966b35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part2.jpg using Guid(e41ba07053f014a4b8e3746632966b35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5bcb61afc275eeb5bccbfef1bff9824') in 0.071928 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.292497 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part3.jpg
+  artifactKey: Guid(08a5892a58091df4d98a1831f2b6389f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part3.jpg using Guid(08a5892a58091df4d98a1831f2b6389f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bd192e5ba04b640273ef3c7c44e7098') in 0.036353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.186730 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part3.jpg
+  artifactKey: Guid(08a5892a58091df4d98a1831f2b6389f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/1000mCornerStart/Tower1000HD_04_part3.jpg using Guid(08a5892a58091df4d98a1831f2b6389f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a8699027d720e3e97da3017a13f5283') in 0.030681 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 53.493733 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/Tower1/TrackQuart_02.mat
+  artifactKey: Guid(246fcda46f47d3c4c88dcde4c1cabf09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/Tower1/TrackQuart_02.mat using Guid(246fcda46f47d3c4c88dcde4c1cabf09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '057528f137b84b9e48cf995a77444ed9') in 0.123224 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/Tower1/TrackQuart_03.mat
+  artifactKey: Guid(bf37967b7b4b9944b908af51ab8af49f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/Tower1/TrackQuart_03.mat using Guid(bf37967b7b4b9944b908af51ab8af49f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db0b2adee0e87f8afff0152f5aaf7048') in 0.045854 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.541819 seconds.
+  path: Assets/Track_Shots/Turfontein_Shots/Winners_Shot/Winner_Shot_part3.mat
+  artifactKey: Guid(ba90ca5af6a4eef48b0c43c8b231fb7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Track_Shots/Turfontein_Shots/Winners_Shot/Winner_Shot_part3.mat using Guid(ba90ca5af6a4eef48b0c43c8b231fb7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa3028fb83c8ff586c1630dd8eabdc49') in 0.039915 seconds 
