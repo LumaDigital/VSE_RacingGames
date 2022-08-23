@@ -4,9 +4,10 @@
 [Bb]uild/
 [Bb]uilds/
 TempAssets/
-Assets/AssetStoreTools*
-FootballUnity/Assets/Animations/FB/Clip*
+[Bb]uilds/
+[Ll]ogs/
 [Rr]ecordings/
+[Uu]ser[Ss]ettings/
 
 # Visual Studio cache directory
 .vs/
