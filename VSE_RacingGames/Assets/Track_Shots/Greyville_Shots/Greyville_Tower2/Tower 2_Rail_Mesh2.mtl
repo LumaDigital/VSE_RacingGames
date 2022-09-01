@@ -1,0 +1,8 @@
+newmtl material71
+Ka 0.000000 0.000000 0.000000
+Kd 0.700000 0.700000 0.700000
+Ks 0.000000 0.000000 0.000000
+Ns 20.000000
+Tr 0.000000
+illum 0
+map_Kd E:\Work\VSE\VSEUnity\Assets\Track_Shots\Greyville_Shots\Greyville_Tower2\Tower2_Railing 2.png
