@@ -333,11 +333,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Target: {fileID: 2125207596}
+  m_Target: {fileID: 1460099576}
   m_PlayOnAwake: 0
   m_LoopMode: 1
   m_Method: 1
-  m_Duration: 18.76263
+  m_Duration: 32.94403
   m_MaxSpeed: 10
   m_EasingMode: 0
   m_AlignmentMode: 1
@@ -890,7 +890,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5ea91c49a075748408ce43be1f70e620,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1024746183456264054, guid: 5ea91c49a075748408ce43be1f70e620,
         type: 3}
@@ -1234,7 +1234,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.778125, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1250,7 +1250,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136798678}
-  m_LocalRotation: {x: 0.08305872, y: -0.76416695, z: 0.1004748, w: 0.631708}
+  m_LocalRotation: {x: 0.020891706, y: 0.6147978, z: -0.016294757, w: 0.78823966}
   m_LocalPosition: {x: -24.757374, y: 3.020155, z: -28.539938}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1394,7 +1394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &176592820
 Transform:
   m_ObjectHideFlags: 0
@@ -1437,6 +1437,8 @@ PlayableDirector:
     value: {fileID: 1138681430}
   - key: {fileID: -3488136453418394389, guid: 2c8e6e1edb3b9d248bf07c61d3b372f3, type: 2}
     value: {fileID: 1658131094}
+  - key: {fileID: 4525046927762311804, guid: 2c8e6e1edb3b9d248bf07c61d3b372f3, type: 2}
+    value: {fileID: 1610989689}
   m_ExposedReferences:
     m_References:
     - 07ac0dcc-2079-4ebe-8b5a-b649a6535054: {fileID: 623399186}
@@ -2336,7 +2338,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5ea91c49a075748408ce43be1f70e620,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1024746183456264054, guid: 5ea91c49a075748408ce43be1f70e620,
         type: 3}
@@ -2876,7 +2878,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.778125, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3520,7 +3522,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5ea91c49a075748408ce43be1f70e620,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1024746183456264054, guid: 5ea91c49a075748408ce43be1f70e620,
         type: 3}
@@ -3996,7 +3998,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654421191}
-  m_LocalRotation: {x: 0.020612365, y: 0.9520897, z: -0.06587094, w: 0.2979284}
+  m_LocalRotation: {x: -0.00003331883, y: 0.99952984, z: -0.030643223, w: -0.0010868036}
   m_LocalPosition: {x: 30.54651, y: 2.34048, z: 23.45992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4034,7 +4036,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.778125, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5698,7 +5700,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.778125, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5714,7 +5716,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043679582}
-  m_LocalRotation: {x: 0.035533596, y: -0.63595515, z: 0.029334452, w: 0.77034926}
+  m_LocalRotation: {x: 0.034187257, y: 0.4697575, z: -0.018209428, w: 0.8819454}
   m_LocalPosition: {x: -2.793632, y: 3.111674, z: -37.03768}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6395,7 +6397,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285170795}
-  m_LocalRotation: {x: 0.009917513, y: 0.8632838, z: -0.016976053, w: 0.5043357}
+  m_LocalRotation: {x: 0.0033428234, y: 0.93015397, z: -0.008471007, w: 0.36705676}
   m_LocalPosition: {x: -14.06288, y: 1.1877127, z: 32.95611}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6433,7 +6435,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.778125, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -7116,6 +7118,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Startgate_1000mStart
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5ea91c49a075748408ce43be1f70e620,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1024746183456264054, guid: 5ea91c49a075748408ce43be1f70e620,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -7504,7 +7511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1460099575
 Transform:
   m_ObjectHideFlags: 0
@@ -7848,6 +7855,8 @@ PlayableDirector:
     value: {fileID: 325040383}
   - key: {fileID: 1386713564699097421, guid: ee583fa20fbb1264c8883f42130a2e3e, type: 2}
     value: {fileID: 37738886}
+  - key: {fileID: 5601067834174338002, guid: ee583fa20fbb1264c8883f42130a2e3e, type: 2}
+    value: {fileID: 325040382}
   m_ExposedReferences:
     m_References:
     - 07ac0dcc-2079-4ebe-8b5a-b649a6535054: {fileID: 623399186}
@@ -8617,6 +8626,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Startgate_800mStart
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5ea91c49a075748408ce43be1f70e620,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1024746183456264054, guid: 5ea91c49a075748408ce43be1f70e620,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8934,7 +8948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1738011176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9241,6 +9255,8 @@ PlayableDirector:
     value: {fileID: 1138681430}
   - key: {fileID: -9143239663586248055, guid: 183c56ba324a93b4cab5dc983a790336, type: 2}
     value: {fileID: 1658131094}
+  - key: {fileID: -5513600212678860766, guid: 183c56ba324a93b4cab5dc983a790336, type: 2}
+    value: {fileID: 789448257}
   m_ExposedReferences:
     m_References:
     - 07ac0dcc-2079-4ebe-8b5a-b649a6535054: {fileID: 623399186}
@@ -10318,7 +10334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1909384190
 Transform:
   m_ObjectHideFlags: 0
@@ -10472,6 +10488,8 @@ PlayableDirector:
     value: {fileID: 1138681430}
   - key: {fileID: -2342590335946400631, guid: adc7dc053b017b9418162951e36a71db, type: 2}
     value: {fileID: 1658131094}
+  - key: {fileID: -7786544613324933730, guid: adc7dc053b017b9418162951e36a71db, type: 2}
+    value: {fileID: 728478948}
   m_ExposedReferences:
     m_References:
     - 07ac0dcc-2079-4ebe-8b5a-b649a6535054: {fileID: 623399186}
@@ -10922,6 +10940,8 @@ PlayableDirector:
     value: {fileID: 1138681430}
   - key: {fileID: 5050743332824132215, guid: 7defab99ce2f77549936fb280fb81f14, type: 2}
     value: {fileID: 1658131094}
+  - key: {fileID: 2514034044454895196, guid: 7defab99ce2f77549936fb280fb81f14, type: 2}
+    value: {fileID: 1439717288}
   m_ExposedReferences:
     m_References:
     - 2ab66aac39a803c49be7ca97e5506e56: {fileID: 2095245037}
