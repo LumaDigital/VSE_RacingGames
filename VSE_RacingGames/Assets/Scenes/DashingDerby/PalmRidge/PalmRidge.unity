@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4961468}
   - component: {fileID: 4961469}
+  - component: {fileID: 4961470}
   m_Layer: 0
   m_Name: CM_Tower1
   m_TagString: Untagged
@@ -147,7 +148,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4961467}
-  m_LocalRotation: {x: -0.08147309, y: 0.45123157, z: -0.035079483, w: -0.8879875}
+  m_LocalRotation: {x: -0.00016812624, y: -0.87383926, z: 0.010579376, w: 0.4860997}
   m_LocalPosition: {x: 36.6441, y: 2.394653, z: 16.31528}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -177,7 +178,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 37738885}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 5
+    FieldOfView: 2.5
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -185,7 +186,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7797928, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -194,6 +195,22 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1271867956}
+--- !u!111 &4961470
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4961467}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a567b04df7cfe0f4ea778606630a2761, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a567b04df7cfe0f4ea778606630a2761, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &24160922
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,7 +402,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f8ae8f03ca406ca43a87afcbe33722de,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36.589806
+      value: -50.27421
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f8ae8f03ca406ca43a87afcbe33722de,
         type: 3}
@@ -395,12 +412,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f8ae8f03ca406ca43a87afcbe33722de,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.30787
+      value: -45.962227
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f8ae8f03ca406ca43a87afcbe33722de,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.2851695
+      value: 0.99721855
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f8ae8f03ca406ca43a87afcbe33722de,
         type: 3}
@@ -410,7 +427,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f8ae8f03ca406ca43a87afcbe33722de,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.95847714
+      value: 0.07453308
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f8ae8f03ca406ca43a87afcbe33722de,
         type: 3}
@@ -1072,6 +1089,7 @@ GameObject:
   m_Component:
   - component: {fileID: 206141743}
   - component: {fileID: 206141744}
+  - component: {fileID: 206141745}
   m_Layer: 0
   m_Name: CM_Tower2
   m_TagString: Untagged
@@ -1086,7 +1104,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206141742}
-  m_LocalRotation: {x: 0.005649182, y: 0.96012115, z: -0.019450972, w: 0.27884978}
+  m_LocalRotation: {x: -0.0016377014, y: 0.96561855, z: -0.006084941, w: -0.2598867}
   m_LocalPosition: {x: 10.67596, y: 1.169816, z: 0.3227196}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1124,7 +1142,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7784091, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1133,6 +1151,22 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 2068855373}
+--- !u!111 &206141745
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206141742}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: ea4b759b2b57dce4d9d6d053989902c0, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: ea4b759b2b57dce4d9d6d053989902c0, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &210830561
 GameObject:
   m_ObjectHideFlags: 0
@@ -2790,8 +2824,8 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0.5
-  m_VerticalDamping: 0.5
+  m_HorizontalDamping: 0
+  m_VerticalDamping: 0
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0
@@ -2859,6 +2893,7 @@ GameObject:
   m_Component:
   - component: {fileID: 921140097}
   - component: {fileID: 921140098}
+  - component: {fileID: 921140099}
   m_Layer: 0
   m_Name: CM_Finishline
   m_TagString: Untagged
@@ -2873,7 +2908,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921140096}
-  m_LocalRotation: {x: 0.0036438762, y: 0.19626842, z: -0.0007293689, w: 0.9805432}
+  m_LocalRotation: {x: 0.0069157267, y: -0.5221225, z: 0.00423396, w: 0.852832}
   m_LocalPosition: {x: -5.2022, y: 0.581507, z: -49.86531}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2903,7 +2938,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 37738885}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 7
+    FieldOfView: 2
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -2911,7 +2946,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7775736, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2920,6 +2955,22 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 730009375}
+--- !u!111 &921140099
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921140096}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: ae975dba44873bb45a79c6fbfabd8f69, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: ae975dba44873bb45a79c6fbfabd8f69, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
@@ -3132,8 +3183,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1062219114}
-  m_LocalRotation: {x: 0.010989815, y: 0.47606322, z: -0.0059498623, w: 0.8793223}
-  m_LocalPosition: {x: 13.790861, y: -0.012254864, z: 20.927647}
+  m_LocalRotation: {x: 1e-45, y: -0.6524371, z: 1e-45, w: 0.7578429}
+  m_LocalPosition: {x: -38.525517, y: -0.119397715, z: -32.599068}
   m_LocalScale: {x: 0.7142857, y: 0.7142857, z: 0.7142857}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3170,7 +3221,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7775736, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5078,12 +5129,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 0, y: 0.3, z: 0}
+  m_TrackedObjectOffset: {x: 0, y: 0.35, z: 0}
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0.5
-  m_VerticalDamping: 0.5
+  m_HorizontalDamping: 0
+  m_VerticalDamping: 0
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0
@@ -5106,7 +5157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 8, y: 0.5, z: 0}
+  m_FollowOffset: {x: 7, y: 0.35, z: 0}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
@@ -5255,13 +5306,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1446683239}
   - component: {fileID: 1446683238}
+  - component: {fileID: 1446683240}
   m_Layer: 0
   m_Name: CM_2000mStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1446683238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5283,7 +5335,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 37738885}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 3
+    FieldOfView: 1.1
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -5291,7 +5343,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7775736, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5307,7 +5359,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446683237}
-  m_LocalRotation: {x: 0.020582167, y: 0.6888138, z: -0.019571561, w: 0.72438174}
+  m_LocalRotation: {x: -0.0011344255, y: 0.9969875, z: -0.014858711, w: -0.076117516}
   m_LocalPosition: {x: 30.087914, y: 67.9297, z: 261.4974}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5316,6 +5368,22 @@ Transform:
   m_Father: {fileID: 443086588}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &1446683240
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446683237}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a36198d81b6348d4f91144566f545552, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a36198d81b6348d4f91144566f545552, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1460099574
 GameObject:
   m_ObjectHideFlags: 0
@@ -6384,8 +6452,8 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0.5
-  m_VerticalDamping: 0.5
+  m_HorizontalDamping: 0
+  m_VerticalDamping: 0
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0
@@ -6456,8 +6524,8 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0.5
-  m_VerticalDamping: 0.5
+  m_HorizontalDamping: 0
+  m_VerticalDamping: 0
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0
