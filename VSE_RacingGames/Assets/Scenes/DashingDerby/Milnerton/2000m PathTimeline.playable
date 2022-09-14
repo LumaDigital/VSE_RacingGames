@@ -520,7 +520,7 @@ MonoBehaviour:
     m_Start: 25.000000000000007
     m_ClipIn: 0
     m_Asset: {fileID: 2846526447958730019}
-    m_Duration: 4
+    m_Duration: 3.6666666666666607
     m_TimeScale: 1
     m_ParentTrack: {fileID: -5106073786023330247}
     m_EaseInDuration: 0
@@ -568,10 +568,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: CM_Tower1
   - m_Version: 1
-    m_Start: 29.000000000000007
+    m_Start: 28.666666666666668
     m_ClipIn: 0
     m_Asset: {fileID: 6554819873736602145}
-    m_Duration: 6.016666666666666
+    m_Duration: 6.350000000000005
     m_TimeScale: 1
     m_ParentTrack: {fileID: -5106073786023330247}
     m_EaseInDuration: 0
@@ -1353,7 +1353,7 @@ MonoBehaviour:
     m_Start: 25.000000000000007
     m_ClipIn: 0
     m_Asset: {fileID: -1357200231941216551}
-    m_Duration: 4
+    m_Duration: 3.6666666666666607
     m_TimeScale: 1
     m_ParentTrack: {fileID: 2469370188348716699}
     m_EaseInDuration: 0
@@ -1725,10 +1725,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 29.000000000000007
+    m_Start: 28.666666666666668
     m_ClipIn: 0
     m_Asset: {fileID: 7107713472673739533}
-    m_Duration: 6.016666666666666
+    m_Duration: 6.350000000000005
     m_TimeScale: 1
     m_ParentTrack: {fileID: 6821830751493683135}
     m_EaseInDuration: 0
