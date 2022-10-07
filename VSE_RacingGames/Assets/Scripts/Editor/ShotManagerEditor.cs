@@ -64,8 +64,7 @@ public class ShotManagerEditor : Editor
                     leftValue: 0,
                     rightValue: 100);
 
-                if (shotIndex > 0) // Excluding First shot
-                    shotManager.ShotsList[shotIndex - 1].EndTrigger = shot.StartTrigger;
+                UpdatePreviousEndTriggerToStartTrigger(shotIndex);
 
                 shot.EndTrigger = EditorGUILayout.IntSlider(
                     "Trigger " + Utility.Alphabet[shotIndex + 1],
@@ -73,12 +72,26 @@ public class ShotManagerEditor : Editor
                     leftValue: 0,
                     rightValue: 100);
 
-                if (shot.EndTrigger < shot.StartTrigger)
-                    shot.EndTrigger = shot.StartTrigger;
-
-                if (shotIndex + 1 < shotManager.ShotsList.Count) // Excluding Last shot
-                    shotManager.ShotsList[shotIndex + 1].StartTrigger = shot.EndTrigger;
+                UpdateNextStartTriggerToEndTrigger(shotIndex);
             }
+            else
+                UpdateNextStartTriggerToEndTrigger(shotIndex);
         }
+    }
+
+    private void UpdatePreviousEndTriggerToStartTrigger(int shotIndex)
+    {
+        if (shotIndex > 0) // Excluding First shot
+            shotManager.ShotsList[shotIndex - 1].EndTrigger = shotManager.ShotsList[shotIndex].StartTrigger;
+    }
+
+    private void UpdateNextStartTriggerToEndTrigger(int shotIndex)
+    {
+        ShotManagerData shot = shotManager.ShotsList[shotIndex];
+        if (shot.EndTrigger < shot.StartTrigger)
+            shot.EndTrigger = shot.StartTrigger;
+
+        if (shotIndex + 1 < shotManager.ShotsList.Count) // Excluding Last shot
+            shotManager.ShotsList[shotIndex + 1].StartTrigger = shot.EndTrigger;
     }
 }
