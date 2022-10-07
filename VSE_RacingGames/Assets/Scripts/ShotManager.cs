@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ShotManager : MonoBehaviour
 {
-    public List<ShotManagerData> ShotsList = new List<ShotManagerData>();
+    public List<ShotData> ShotsList = new List<ShotData>();
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +21,15 @@ public class ShotManager : MonoBehaviour
 }
 
 [Serializable]
-public class ShotManagerData
+public class ShotData
 {
     public bool ShowDataControls;
+    public bool ShowPropsListControl;
 
     public int StartTrigger;
     public int EndTrigger;
 
-    public GameObject ShotParent;
+    public GameObject ShotParentGameObject;
+
+    public List<GameObject> PropsGameObjectList = new List<GameObject>();
 }
