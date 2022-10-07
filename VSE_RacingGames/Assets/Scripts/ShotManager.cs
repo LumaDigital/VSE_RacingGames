@@ -20,6 +20,7 @@ public class ShotManager : MonoBehaviour
     }
 }
 
+[Serializable]
 public class ShotManagerData
 {
     public bool ShowDataControls;

@@ -1,6 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+
 using UnityEditor;
 using UnityEngine;
 
@@ -40,7 +39,6 @@ public class ShotManagerEditor : Editor
             }
         }
 
-
         if (currentNumberOfShots > 0)
             DisplayShotData();
     }
@@ -60,10 +58,26 @@ public class ShotManagerEditor : Editor
             shot.ShowDataControls = EditorGUILayout.Foldout(shot.ShowDataControls, shotName);
             if (shot.ShowDataControls)
             {
-                shot.StartTrigger =
-                    EditorGUILayout.IntSlider("Trigger " + Utility.Alphabet[shotIndex], shot.StartTrigger, leftValue: 0, rightValue: 100);
-                shot.EndTrigger =
-                    EditorGUILayout.IntSlider("Trigger " + Utility.Alphabet[shotIndex + 1], shot.EndTrigger, leftValue: 0, rightValue: 100);
+                shot.StartTrigger = EditorGUILayout.IntSlider(
+                    "Trigger " + Utility.Alphabet[shotIndex],
+                    shot.StartTrigger,
+                    leftValue: 0,
+                    rightValue: 100);
+
+                if (shotIndex > 0) // Excluding First shot
+                    shotManager.ShotsList[shotIndex - 1].EndTrigger = shot.StartTrigger;
+
+                shot.EndTrigger = EditorGUILayout.IntSlider(
+                    "Trigger " + Utility.Alphabet[shotIndex + 1],
+                    shot.EndTrigger,
+                    leftValue: 0,
+                    rightValue: 100);
+
+                if (shot.EndTrigger < shot.StartTrigger)
+                    shot.EndTrigger = shot.StartTrigger;
+
+                if (shotIndex + 1 < shotManager.ShotsList.Count) // Excluding Last shot
+                    shotManager.ShotsList[shotIndex + 1].StartTrigger = shot.EndTrigger;
             }
         }
     }
