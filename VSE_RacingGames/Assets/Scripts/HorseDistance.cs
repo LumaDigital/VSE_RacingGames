@@ -31,8 +31,10 @@ public class HorseDistance : MonoBehaviour
     string percentCompleted;
     [SerializeField][ReadOnly]
     string distanceCompleted;
-    float splineLength;
-    float splineNormalizedTime;
+    [HideInInspector]
+    public float splineLength;
+    [HideInInspector]
+    public float splineNormalizedTime;
 
     void Update()
     {
