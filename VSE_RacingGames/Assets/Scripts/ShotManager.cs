@@ -43,7 +43,7 @@ public class ShotManager : MonoBehaviour
         style.fontSize = 30;
         style.normal.textColor = Color.white;
 
-        foreach (ShotData shot in ListOfShots)
+        /*foreach (ShotData shot in ListOfShots)
         {
             if (ToggleShotTriggerDisplay)
             {
@@ -61,7 +61,7 @@ public class ShotManager : MonoBehaviour
 
                 Handles.Label(shot.TriggerObject.transform.position, Utility.Alphabet[shotIndex].ToString(), style);
             }
-        }
+        }*/
     }
 
     private void Update()

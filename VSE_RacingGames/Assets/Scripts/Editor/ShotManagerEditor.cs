@@ -26,10 +26,25 @@ public class ShotManagerEditor : Editor
             if (numberOfShots > ShotManager.ListOfShots.Count)
             {
                 for (int i = 0; i < countDifference; i++)
-                    ShotManager.ListOfShots.Add(new ShotData());
+                {
+                    ShotData newShot = new ShotData();
+                    newShot.TriggerObject = new GameObject(Utility.Alphabet[i].ToString());
+                    newShot.TriggerObject.transform.parent = ShotManager.transform;
+                    newShot.TriggerObject.AddComponent(typeof(ShotTrigger));
+
+                    ShotManager.ListOfShots.Add(newShot);
+                }
             }
             else if (numberOfShots >= 0)
             {
+                //for (int i = numberOfShots - 1; i <= countDifference; i++)
+                //    DestroyImmediate(ShotManager.ListOfShots[i].TriggerObject);
+
+                for (int i = ShotManager.ListOfShots.Count - 1; i >= ShotManager.ListOfShots.Count - countDifference; i--)
+                {
+                    DestroyImmediate(ShotManager.ListOfShots[i].TriggerObject);
+                }
+
                 ShotManager.ListOfShots.RemoveRange(numberOfShots, countDifference);
             }
 
