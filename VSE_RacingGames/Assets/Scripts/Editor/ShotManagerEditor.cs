@@ -5,25 +5,27 @@ using UnityEditor;
 public class ShotManagerEditor : Editor
 {
     private ShotManager ShotManager;
-    private int numberOfShots;
 
     private void OnEnable()
     {
         ShotManager = (ShotManager)target;
+        ShotManager.Length = ShotManager.SplineContainer.CalculateLength();
+
+        ShotManager.NumberOfShots = ShotManager.ListOfShots.Count;
     }
 
     public override void OnInspectorGUI()
     {   
-        EditorGUI.BeginChangeCheck();
-        numberOfShots = EditorGUILayout.IntField("Number of Shots:", ShotManager.ListOfShots.Count);
-        if (EditorGUI.EndChangeCheck())
-        {
-            if (numberOfShots > Utility.Alphabet.Length)
-                numberOfShots = Utility.Alphabet.Length;
+        Undo.RecordObject(ShotManager, nameof(ShotManager.NumberOfShots));
+        ShotManager.NumberOfShots = EditorGUILayout.IntField("Number of Shots:", ShotManager.NumberOfShots);
 
-            Undo.RecordObject(ShotManager, nameof(ShotManager.ListOfShots));
-            int countDifference = Mathf.Abs(numberOfShots - ShotManager.ListOfShots.Count);
-            if (numberOfShots > ShotManager.ListOfShots.Count)
+        if (ShotManager.NumberOfShots != ShotManager.ListOfShots.Count)// Actually check if change check can be used instead. Needs to be working with redo/undo
+        {
+            if (ShotManager.NumberOfShots > Utility.Alphabet.Length)
+                ShotManager.NumberOfShots = Utility.Alphabet.Length;
+
+            int countDifference = Mathf.Abs(ShotManager.NumberOfShots - ShotManager.ListOfShots.Count);
+            if (ShotManager.NumberOfShots > ShotManager.ListOfShots.Count)//increment
             {
                 for (int i = 0; i < countDifference; i++)
                 {
@@ -33,27 +35,22 @@ public class ShotManagerEditor : Editor
                     newShot.TriggerObject.AddComponent(typeof(ShotTrigger));
 
                     ShotManager.ListOfShots.Add(newShot);
+
+                    // Call method that rotates and positions the argument shot
                 }
             }
-            else if (numberOfShots >= 0)
+            else//decrement
             {
-                //for (int i = numberOfShots - 1; i <= countDifference; i++)
-                //    DestroyImmediate(ShotManager.ListOfShots[i].TriggerObject);
-
                 for (int i = ShotManager.ListOfShots.Count - 1; i >= ShotManager.ListOfShots.Count - countDifference; i--)
                 {
                     DestroyImmediate(ShotManager.ListOfShots[i].TriggerObject);
                 }
 
-                ShotManager.ListOfShots.RemoveRange(numberOfShots, countDifference);
+                ShotManager.ListOfShots.RemoveRange(ShotManager.NumberOfShots, countDifference);
             }
-
-            UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
         }
 
-        ShotManager.Length = ShotManager.SplineContainer.CalculateLength();
-
-        if (numberOfShots > 0)
+        if (ShotManager.NumberOfShots > 0)
             ShowShots();
     }
 
@@ -89,12 +86,13 @@ public class ShotManagerEditor : Editor
                     (int)ShotManager.Length);
                 if (EditorGUI.EndChangeCheck())
                     UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
+                    // Call method that rotates and positions the argument shot
 
                 EditorGUILayout.BeginHorizontal();  
                 GUILayout.Space(15);
                 shot.ToggleEntityFoldout = EditorGUILayout.Foldout(shot.ToggleEntityFoldout,
                     "Number of Entities:");
-                GUILayout.FlexibleSpace();
+                GUILayout.FlexibleSpace();// Just check if you can use just one of these calls
                 EditorGUI.BeginChangeCheck();
                 int numberOfProps = EditorGUILayout.IntField("\t", shot.ListOfEntities.Count);
                 EditorGUILayout.EndHorizontal();
@@ -115,7 +113,7 @@ public class ShotManagerEditor : Editor
                     for (int i = 0; i < shot.ListOfEntities.Count; i++)
                     {
                         EditorGUILayout.BeginHorizontal();
-                        GUILayout.FlexibleSpace();
+                        GUILayout.FlexibleSpace();//// Just check if you can use just one of these calls
                         GUILayout.Label(i + ": ");
                         shot.ListOfEntities[i] = (GameObject)EditorGUILayout.ObjectField(
                             shot.ListOfEntities[i],

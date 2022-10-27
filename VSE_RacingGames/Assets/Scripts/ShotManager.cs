@@ -15,6 +15,8 @@ public class ShotManager : MonoBehaviour
     public float Length;
     public float HorsePosition;
 
+    public int NumberOfShots;
+
     public HorseDistance HorseDistance
     {
         get
@@ -56,9 +58,11 @@ public class ShotManager : MonoBehaviour
                     shot.TriggerObject.AddComponent(typeof(ShotTrigger));
                 }
 
+                // Move to method in ShotManagerEditor
                 shot.TriggerObject.transform.position = SplineContainer.EvaluatePosition(shot.TriggerPosition / Length);
                 shot.TriggerObject.transform.LookAt(SplineContainer.EvaluatePosition(shot.TriggerPosition / Length + lookAtValue));
 
+                // Move to ShotTrigger OnDrawGizmos
                 Handles.Label(shot.TriggerObject.transform.position, Utility.Alphabet[shotIndex].ToString(), style);
             }
         }*/
@@ -110,7 +114,8 @@ public class ShotManager : MonoBehaviour
     }
 }
 
-[Serializable]
+// Don't need this to be serialized I reckon.
+//[Serializable]
 public class ShotData
 {
     public bool ToggleShotFoldout;
