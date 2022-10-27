@@ -115,7 +115,7 @@ public class ShotManager : MonoBehaviour
 }
 
 // Don't need this to be serialized I reckon.
-//[Serializable]
+[Serializable]
 public class ShotData
 {
     public bool ToggleShotFoldout;

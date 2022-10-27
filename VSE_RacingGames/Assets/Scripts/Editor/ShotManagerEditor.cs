@@ -5,6 +5,7 @@ using UnityEditor;
 public class ShotManagerEditor : Editor
 {
     private ShotManager ShotManager;
+    int previousNumberOfShots;
 
     private void OnEnable()
     {
@@ -15,9 +16,16 @@ public class ShotManagerEditor : Editor
     }
 
     public override void OnInspectorGUI()
-    {   
+    {
         Undo.RecordObject(ShotManager, nameof(ShotManager.NumberOfShots));
         ShotManager.NumberOfShots = EditorGUILayout.IntField("Number of Shots:", ShotManager.NumberOfShots);
+
+        if (ShotManager.NumberOfShots != previousNumberOfShots)
+        {
+            Debug.Log("Hi there");
+            // Gotta move shot stuff here
+        }
+        previousNumberOfShots = ShotManager.NumberOfShots;
 
         if (ShotManager.NumberOfShots != ShotManager.ListOfShots.Count)// Actually check if change check can be used instead. Needs to be working with redo/undo
         {
