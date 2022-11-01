@@ -37,8 +37,21 @@ public static class VSEEditorUtility
         }
     }
 
-    public static void ShowMissingPathWarning(string missingPath)
+    public static GUILayoutOption ThreeDigitWidthLayoutOption
     {
-        Debug.LogWarning(WarningPrefix + "'Missing path': " + missingPath + "\nDoes not exist, and requires implementation.");
+        get
+        {
+            return GUILayout.MaxWidth(37);
+        }
+    }
+
+    public static void LogVSEWarning(string errorMessage)
+    {
+        Debug.LogWarning(WarningPrefix + errorMessage);
+    }
+
+    public static void RoundOffToOneDecimals(ref float value)
+    {
+        value = (Mathf.Round(value * 10)) / 10;
     }
 }

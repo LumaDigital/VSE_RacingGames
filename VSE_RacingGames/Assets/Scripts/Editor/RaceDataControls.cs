@@ -136,7 +136,7 @@ public class RaceDataControls
         string raceTypeDirectory = Path.Join(Path.Join("Assets", "Scenes"), raceType.Name);
         if (!Directory.Exists(raceTypeDirectory))
         {
-            VSEEditorUtility.ShowMissingPathWarning(raceTypeDirectory);
+            LogMissingPathWarning(raceTypeDirectory);
             return;
         }
 
@@ -145,7 +145,7 @@ public class RaceDataControls
             Path.Join(raceTrackDirectory, currentRacingGameData.RaceTrackName + VSEEditorUtility.UnitySceneExtension);
         if (!File.Exists(raceTrackPath))
         {
-            VSEEditorUtility.ShowMissingPathWarning(raceTrackPath);
+            LogMissingPathWarning(raceTrackPath);
             return;
         }
 
@@ -170,6 +170,11 @@ public class RaceDataControls
             thoroughbredData.RaceModifierName = thoroughbredData.RaceModifierAndMaximumRacerCountArray[0].Item1;
             thoroughbredData.SilkSetIndex = 0;
         }
+    }
+
+    private static void LogMissingPathWarning(string missingPath)
+    {
+        VSEEditorUtility.LogVSEWarning("'Missing path': " + missingPath + "\nDoes not exist, and requires implementation.");
     }
 }
 
