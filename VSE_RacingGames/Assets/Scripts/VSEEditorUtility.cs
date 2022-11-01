@@ -37,6 +37,18 @@ public static class VSEEditorUtility
         }
     }
 
+    public static GUIStyle TriggerLabelStyle
+    {
+        get
+        {
+            GUIStyle style = new GUIStyle();
+            style.fontSize = 30;
+            style.normal.textColor = Color.white;
+
+            return style;
+        }
+    }
+
     public static GUILayoutOption ThreeDigitWidthLayoutOption
     {
         get

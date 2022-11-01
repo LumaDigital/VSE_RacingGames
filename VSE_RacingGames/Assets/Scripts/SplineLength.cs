@@ -16,12 +16,11 @@ public class SplineLength : MonoBehaviour
     }
     private SplineContainer splineContainer;
 
-    [SerializeField]
     [ReadOnly]
-    float length;
+    public float Length;
 
     void Update()
     {
-        length = (float)Math.Round(SplineContainer.CalculateLength(), 2);
+        Length = (float)Math.Round(SplineContainer.CalculateLength(), 2);
     }
 }

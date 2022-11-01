@@ -4,6 +4,12 @@ using UnityEngine.Splines;
 
 public class VSEScriptMenu
 {
+    [MenuItem("VSE/Add Components/Spline Tools/Shot Manager")]
+    public static void AddShotManagerComponent()
+    {
+        AddComponentToSelectedObject(typeof(ShotManager), typeof(SplineContainer));
+    }
+
     [MenuItem("VSE/Add Components/Spline Tools/Spline Gizmo Display")]
     public static void AddSplineDisplayComponent()
     {
