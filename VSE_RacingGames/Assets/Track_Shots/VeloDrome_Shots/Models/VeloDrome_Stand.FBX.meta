@@ -1,0 +1,95 @@
+fileFormatVersion: 2
+guid: ae4fbe130ef522041a96202c5f64ae82
+ModelImporter:
+  fileIDToRecycleName:
+    4300000: Cylinder001
+    4300002: Cylinder002
+    4300004: Cylinder003
+    4300006: Cylinder004
+    4300008: Box001
+    4300010: Box002
+    4300012: Cylinder005
+    4300014: Cylinder006
+    4300016: Cylinder007
+    4300018: Cylinder008
+    4300020: Box003
+    4300022: Cylinder009
+    4300024: Cylinder010
+    4300026: Cylinder011
+    4300028: Cylinder012
+    4300030: Box004
+    4300032: Cylinder013
+    4300034: Cylinder014
+    4300036: Cylinder015
+    4300038: Cylinder016
+    4300040: Box005
+    4300042: Cylinder017
+    4300044: Cylinder018
+    4300046: Cylinder019
+    4300048: Cylinder020
+    4300050: Box006
+    4300052: Cylinder021
+    4300054: Cylinder022
+    4300056: Cylinder023
+    4300058: Cylinder024
+    4300060: Box007
+    4300062: Box008
+    4300064: Box009
+    4300066: Box010
+    4300068: Box011
+    4300070: Box012
+    4300072: Box013
+    4300074: Box014
+    4300076: Box015
+    4300078: Box016
+    4300080: VeloDrome Stand
+    4300082: VelroDrome_Bike_Stand
+    4300084: VelroDrome_Bike_Stand - 12
+    4300086: Bike_Stand
+  serializedVersion: 10
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    generateAnimations: 3
+    bakeSimulation: 0
+    splitAnimations: 1
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMesh: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  textMetaNamesToFileIDs:
+    //RootNode:
+      data:
+        first: 1
+        second: a0860100
+      data:
+        first: 4
+        second: 801a0600
+      data:
+        first: 23
+        second: 60182300
+      data:
+        first: 33
+        second: a05a3200
