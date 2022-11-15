@@ -107,6 +107,7 @@ public class ShotManagerEditor : Editor
             GUILayout.BeginHorizontal("box");
             shot.ToggleShotFoldout = EditorGUILayout.Foldout(shot.ToggleShotFoldout, shotName);
             GUILayout.EndHorizontal();
+
             if (shot.ToggleShotFoldout)
             {
                 shot.CameraComponent = (Camera)EditorGUILayout.ObjectField("Camera Object:",
@@ -116,11 +117,11 @@ public class ShotManagerEditor : Editor
 
                 EditorGUI.BeginChangeCheck();
                 Undo.RecordObject(shotManager, nameof(shot.TriggerPosition));
-                shot.TriggerPosition = EditorGUILayout.IntSlider(
-                    "Trigger " + VSEUtility.Alphabet[shotIndex] + ":",
+                shot.TriggerPosition = EditorGUILayout.Slider(
+                    "Trigger Distance " + VSEUtility.Alphabet[shotIndex] + ":",
                     shot.TriggerPosition,
-                    leftValue: 0,
-                    (int)shotManager.SplineLength.Length);
+                    leftValue: 0f,
+                    shotManager.SplineLength.Length);
 
                 if (EditorGUI.EndChangeCheck())
                 {
