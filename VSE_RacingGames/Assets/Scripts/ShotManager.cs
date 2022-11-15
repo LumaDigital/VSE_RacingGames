@@ -17,7 +17,6 @@ public class ShotManager : MonoBehaviour
     private float horsePosition;
     private bool requireComponent;
 
-
     public SplineLength SplineLength
     {
         get
@@ -55,8 +54,8 @@ public class ShotManager : MonoBehaviour
     {
         if (HorseDistance != null && ListOfShots.Count > 0)
         {
-            horsePosition = (float)Math.Round(HorseDistance.splineLength * HorseDistance.splineNormalizedTime, 0);
-            if (horsePosition == ListOfShots[triggerShotIndex].TriggerPosition && !hitLastTrigger)
+            horsePosition = HorseDistance.splineLength * HorseDistance.splineNormalizedTime;
+            if (horsePosition >= ListOfShots[triggerShotIndex].TriggerPosition && !hitLastTrigger)
             {
                 ActivateShotCameraAndEntities(triggerShotIndex);
 
@@ -110,7 +109,7 @@ public class ShotManager : MonoBehaviour
             foreach (GameObject entity in ListOfShots[triggerShotIndex - 1].ListOfEntities)
             { 
                 if (entity != null)
-                    entity.SetActive(true);
+                    entity.SetActive(false);
                 else
                     VSEEditorUtility.LogVSEWarning("Shot" + (triggerShotIndex) + "'s Entity list contains an empty object!");
             }
@@ -123,7 +122,7 @@ public class ShotData
 {
     public bool ToggleShotFoldout;
     public bool ToggleEntityFoldout = true;
-    public int TriggerPosition;
+    public float TriggerPosition;
     public GameObject TriggerObject;
     public Camera CameraComponent;
 
