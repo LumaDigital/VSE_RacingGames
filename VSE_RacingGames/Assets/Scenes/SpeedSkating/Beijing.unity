@@ -1802,7 +1802,7 @@ Transform:
   - {fileID: 156515080}
   - {fileID: 1388969597}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &533539683
 GameObject:
@@ -2952,7 +2952,7 @@ Transform:
   m_Children:
   - {fileID: 1460099575}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1132350955
 PrefabInstance:
@@ -5650,3 +5650,74 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2119690246}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8513455645749881887
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2450222556954755927, guid: a8f05c2caf935644f978ac925f6edff5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450222556954755927, guid: a8f05c2caf935644f978ac925f6edff5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450222556954755927, guid: a8f05c2caf935644f978ac925f6edff5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450222556954755927, guid: a8f05c2caf935644f978ac925f6edff5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450222556954755927, guid: a8f05c2caf935644f978ac925f6edff5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450222556954755927, guid: a8f05c2caf935644f978ac925f6edff5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450222556954755927, guid: a8f05c2caf935644f978ac925f6edff5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450222556954755927, guid: a8f05c2caf935644f978ac925f6edff5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450222556954755927, guid: a8f05c2caf935644f978ac925f6edff5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450222556954755927, guid: a8f05c2caf935644f978ac925f6edff5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450222556954755927, guid: a8f05c2caf935644f978ac925f6edff5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2450222556955254647, guid: a8f05c2caf935644f978ac925f6edff5,
+        type: 3}
+      propertyPath: m_Name
+      value: SpeedSkater_Base
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: a8f05c2caf935644f978ac925f6edff5, type: 3}

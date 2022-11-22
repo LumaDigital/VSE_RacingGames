@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SulkyTrail SpeedSkating
+  m_Shader: {fileID: 203, guid: 0000000000000000e000000000000000, type: 0}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 3540392cad615e54686e42183a32d9a8, type: 1}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 1f94a144df7be6046a08fa7cbcb70443, type: 1}
+          m_Scale: {x: .200000003, y: .200000003}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Shininess
+        second: .100000016
+      data:
+        first:
+          name: _InvFade
+        second: 1
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: .99999994, g: .99999994, b: .99999994, a: .156862751}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: .880596995, g: .880596995, b: .880596995, a: 0}
+      data:
+        first:
+          name: _TintColor
+        second: {r: .701492548, g: .887276828, b: 1, a: .274509817}
+      data:
+        first:
+          name: _Emission
+        second: {r: .25373137, g: .240940198, b: .123078652, a: 0}
