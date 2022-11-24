@@ -1,5 +1,9 @@
+using System;
+
 using UnityEngine;
 using UnityEditor;
+
+using CameraData;
 
 [CustomEditor(typeof(ShotManager))]
 public class ShotManagerEditor : Editor
@@ -110,10 +114,13 @@ public class ShotManagerEditor : Editor
 
             if (shot.ToggleShotFoldout)
             {
-                shot.CameraComponent = (Camera)EditorGUILayout.ObjectField("Camera Object:",
+                EditorGUI.BeginChangeCheck();
+                shot.CameraComponent = (RacingGameCamera)EditorGUILayout.ObjectField("Camera Object:",
                     shot.CameraComponent,
-                    typeof(Camera),
+                    typeof(RacingGameCamera),
                     allowSceneObjects: true);
+                if (EditorGUI.EndChangeCheck())
+                    shot.CameraComponent.ShotData = shot;
 
                 EditorGUI.BeginChangeCheck();
                 Undo.RecordObject(shotManager, nameof(shot.TriggerPosition));
@@ -125,9 +132,20 @@ public class ShotManagerEditor : Editor
 
                 if (EditorGUI.EndChangeCheck())
                 {
+                    if (shot.CameraComponent != null)
+                        shot.CameraComponent.ShotData = shot;
+                    UpdateShotTime(shotIndex);
                     UpdateTriggerPosition(shot);
                     UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
                 }
+
+                EditorGUI.BeginDisabledGroup(true); 
+                EditorGUILayout.BeginHorizontal();
+                GUILayout.Label("Shot's Time:");
+                EditorGUILayout.FloatField((float)Math.Round((shot.ShotTime), 3), 
+                    GUILayout.Width(VSEEditorUtility.LargerUISpacer));
+                EditorGUILayout.EndHorizontal();
+                EditorGUI.EndDisabledGroup();
 
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.Space(VSEEditorUtility.MediumUISpacer);
@@ -177,6 +195,7 @@ public class ShotManagerEditor : Editor
             {
                 shotManager.ListOfShots[shotIndex].TriggerPosition = shotManager.ListOfShots[shotIndex - 1].TriggerPosition;
                 UpdateTriggerPosition(shotManager.ListOfShots[shotIndex]);
+                UpdateShotTime(shotIndex);
             }
         }
     }
@@ -187,6 +206,19 @@ public class ShotManagerEditor : Editor
             shot.TriggerPosition / shotManager.SplineContainer.CalculateLength());
         shot.TriggerObject.transform.LookAt(shotManager.SplineContainer.EvaluatePosition(
             shot.TriggerPosition / shotManager.SplineContainer.CalculateLength() + LookAtValue));
+    }
+
+    private void UpdateShotTime(int shotIndex)
+    {
+        if (shotIndex + 1 < shotManager.ListOfShots.Count)
+            shotManager.ListOfShots[shotIndex].ShotTime = (shotManager.ListOfShots[shotIndex + 1].TriggerPosition - 
+                shotManager.ListOfShots[shotIndex].TriggerPosition) / shotManager.SplineAnimate.maxSpeed;
+        else
+            shotManager.ListOfShots[shotIndex].ShotTime = (shotManager.SplineLength.Length - 
+                shotManager.ListOfShots[shotIndex].TriggerPosition) / shotManager.SplineAnimate.maxSpeed;
+
+        if (shotIndex > 0)
+            UpdateShotTime(shotIndex - 1);
     }
 
     void UndoCallBack()

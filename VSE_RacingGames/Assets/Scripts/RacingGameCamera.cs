@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.Splines;
 
 namespace CameraData
 {
@@ -14,6 +15,7 @@ namespace CameraData
     {
         public CameraShotType ShotType;
         public Transform TargetTransform;
+        public ShotData ShotData;
 
         public float FinalFov = 8;
         public float AnimatedFOVStart;
@@ -27,8 +29,19 @@ namespace CameraData
         private float fovAnimationStartTime;
         private float fovAnimationOffsetEndTime;
 
-        // TODO this shot time will be replaced with the time given by the shot manager
-        private float TEMPShotTime = 6.5f;//secs
+        public ShotManager ShotManager
+        {
+            get
+            {
+                if (shotManager == null)
+                {
+                    SplineContainer activeSpline = GameObject.Find("Track_Splines").transform.GetComponentInChildren<SplineContainer>();
+                    shotManager = GameObject.Find(activeSpline.name).GetComponent<ShotManager>();
+                }
+                return shotManager;
+            }
+        }
+        private ShotManager shotManager;
 
         public ParentConstraint ParentConstraint
         {
@@ -49,8 +62,8 @@ namespace CameraData
             if (ShotType == CameraShotType.LookAt && cameraComponent.fieldOfView != FinalFov)
             {
                 // Dividing Start/End time by 100 to convert them to a fraction of 1
-                fovAnimationStartTime = TEMPShotTime * (AnimatedFOVStart / 100);
-                fovAnimationOffsetEndTime = (TEMPShotTime * (AnimatedFOVEnd / 100)) - fovAnimationStartTime;
+                fovAnimationStartTime = ShotData.ShotTime * (AnimatedFOVStart / 100);
+                fovAnimationOffsetEndTime = (ShotData.ShotTime * (AnimatedFOVEnd / 100)) - fovAnimationStartTime;
 
                 usingFovAnimation = true;
             }

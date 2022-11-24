@@ -1,6 +1,10 @@
 using System;
+
 using UnityEditor;
+using UnityEngine;
 using UnityEngine.Splines;
+
+using CameraData;
 
 public class VSEScriptMenu
 {
@@ -26,6 +30,12 @@ public class VSEScriptMenu
     public static void AddHorseDistanceComponent()
     {
         AddComponentToSelectedObject(typeof(HorseDistance), typeof(SplineAnimate));
+    }
+    
+    [MenuItem("VSE/Add Components/Racing Game Camera")]
+    public static void AddRacingGameCameraComponent()
+    {
+        AddComponentToSelectedObject(typeof(RacingGameCamera), typeof(Camera));
     }
 
     static void AddComponentToSelectedObject(Type componentToAdd, Type requiredComponent = null)

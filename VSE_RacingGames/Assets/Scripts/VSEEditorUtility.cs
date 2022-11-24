@@ -6,6 +6,7 @@ public static class VSEEditorUtility
 
     private const string WarningPrefix = "|| VSE WARNING || ";
 
+    public const float LargerUISpacer = 50f;
     public const float LargeUISpacer = 20f;
     public const float MediumUISpacer = LargeUISpacer / 2;
     public const float SmallUISpacer = (LargeUISpacer / 4) + 1;

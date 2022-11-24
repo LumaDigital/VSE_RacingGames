@@ -5,6 +5,8 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Splines;
 
+using CameraData;
+
 [RequireComponent(typeof(SplineLength))]
 public class ShotManager : MonoBehaviour
 {
@@ -33,7 +35,7 @@ public class ShotManager : MonoBehaviour
         get
         {
             if (horseDistance == null)
-                horseDistance = GameObject.Find("HorseAndJockey").GetComponent<HorseDistance>();
+                horseDistance = GameObject.FindObjectOfType<HorseDistance>();
             return horseDistance;
         }
     }
@@ -49,6 +51,17 @@ public class ShotManager : MonoBehaviour
         }
     }
     private SplineContainer splineContainer;
+
+    public SplineAnimate SplineAnimate
+    {
+        get
+        {
+            if (splineAnimate == null)
+                splineAnimate = GameObject.FindObjectOfType<SplineAnimate>();
+            return splineAnimate;
+        }
+    }
+    private SplineAnimate splineAnimate;
 
     private void Update()
     {
@@ -123,8 +136,9 @@ public class ShotData
     public bool ToggleShotFoldout;
     public bool ToggleEntityFoldout = true;
     public float TriggerPosition;
+    public float ShotTime;
     public GameObject TriggerObject;
-    public Camera CameraComponent;
+    public RacingGameCamera CameraComponent;
 
     public List<GameObject> ListOfEntities = new List<GameObject>();
 }
