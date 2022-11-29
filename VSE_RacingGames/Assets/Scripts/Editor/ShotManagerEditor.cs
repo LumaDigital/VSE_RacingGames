@@ -17,34 +17,31 @@ public class ShotManagerEditor : Editor
     {
         shotManager = (ShotManager)target;
         shotManager.NumberOfShots = shotManager.ListOfShots.Count;
+        previousNumberOfShots = shotManager.NumberOfShots;
 
-        Undo.undoRedoPerformed += UndoCallBack;
+        Undo.undoRedoPerformed += HandleNumberOfShotsUndoRedo;
+    }
+
+    private void OnDisable()
+    {
+        Undo.undoRedoPerformed -= HandleNumberOfShotsUndoRedo;
     }
 
     public override void OnInspectorGUI()
     {
         Undo.RecordObject(shotManager, nameof(shotManager.NumberOfShots));
-        shotManager.NumberOfShots = EditorGUILayout.IntSlider("Number of Shots:",
-            shotManager.NumberOfShots,
-            leftValue: 0,
-            rightValue: VSEUtility.Alphabet.Length);
-
-        // Prevents manually entering values
-        if (GUILayoutUtility.GetLastRect().Contains(Event.current.mousePosition))
-            GUI.FocusControl(null);
+        shotManager.NumberOfShots = EditorGUILayout.IntField("Number of Shots", shotManager.NumberOfShots);
 
         if (shotManager.NumberOfShots > VSEUtility.Alphabet.Length)
             shotManager.NumberOfShots = VSEUtility.Alphabet.Length;
         else if (shotManager.NumberOfShots < 0)
             shotManager.NumberOfShots = 0;
 
+        // Saving previous value to detect value changes AND undo/redo events
         if (previousNumberOfShots != shotManager.NumberOfShots)
-            previousNumberOfShots = shotManager.NumberOfShots;
-
-        if (shotManager.NumberOfShots != shotManager.ListOfShots.Count)
         {
             int countDifference = Mathf.Abs(shotManager.NumberOfShots - shotManager.ListOfShots.Count);
-            if (shotManager.NumberOfShots > shotManager.ListOfShots.Count)
+            if (shotManager.NumberOfShots > shotManager.ListOfShots.Count) // Add
             {
                 for (int i = 0; i < countDifference; i++)
                 {
@@ -62,13 +59,15 @@ public class ShotManagerEditor : Editor
                     UpdateTriggerPosition(newShot);
                 }
             }
-            else
+            else // Subtract
             {
                 for (int i = shotManager.ListOfShots.Count - 1; i >= shotManager.ListOfShots.Count - countDifference; i--)
                     DestroyImmediate(shotManager.ListOfShots[i].TriggerObject);
 
                 shotManager.ListOfShots.RemoveRange(shotManager.NumberOfShots, countDifference);
             }
+
+            previousNumberOfShots = shotManager.NumberOfShots;
         }
 
         if (shotManager.NumberOfShots > 0)
@@ -200,6 +199,19 @@ public class ShotManagerEditor : Editor
         }
     }
 
+    private void UpdateShotTime(int shotIndex)
+    {
+        if (shotIndex + 1 < shotManager.ListOfShots.Count)
+            shotManager.ListOfShots[shotIndex].ShotTime = (shotManager.ListOfShots[shotIndex + 1].TriggerPosition -
+                shotManager.ListOfShots[shotIndex].TriggerPosition) / shotManager.SplineAnimate.maxSpeed;
+        else
+            shotManager.ListOfShots[shotIndex].ShotTime = (shotManager.SplineLength.Length -
+                shotManager.ListOfShots[shotIndex].TriggerPosition) / shotManager.SplineAnimate.maxSpeed;
+
+        if (shotIndex > 0)
+            UpdateShotTime(shotIndex - 1);
+    }
+
     private void UpdateTriggerPosition(ShotData shot)
     {
         shot.TriggerObject.transform.position = shotManager.SplineContainer.EvaluatePosition(
@@ -208,48 +220,19 @@ public class ShotManagerEditor : Editor
             shot.TriggerPosition / shotManager.SplineContainer.CalculateLength() + LookAtValue));
     }
 
-    private void UpdateShotTime(int shotIndex)
+    // Undo/Redo affects NumberOfShots and ShotsList but not the gameobjects spawned from it.
+    // This event reverts these field changes so that OnGui can properly handle the gameobjects.
+    private void HandleNumberOfShotsUndoRedo()
     {
-        if (shotIndex + 1 < shotManager.ListOfShots.Count)
-            shotManager.ListOfShots[shotIndex].ShotTime = (shotManager.ListOfShots[shotIndex + 1].TriggerPosition - 
-                shotManager.ListOfShots[shotIndex].TriggerPosition) / shotManager.SplineAnimate.maxSpeed;
-        else
-            shotManager.ListOfShots[shotIndex].ShotTime = (shotManager.SplineLength.Length - 
-                shotManager.ListOfShots[shotIndex].TriggerPosition) / shotManager.SplineAnimate.maxSpeed;
-
-        if (shotIndex > 0)
-            UpdateShotTime(shotIndex - 1);
-    }
-
-    void UndoCallBack()
-    {
-        if (shotManager.NumberOfShots > previousNumberOfShots)
+        if (shotManager.NumberOfShots > previousNumberOfShots) // Add 
         {
-            foreach (ShotData shot in shotManager.ListOfShots)
-            {
-                if (shot.TriggerObject == null)
-                {
-                    shot.TriggerObject = new GameObject(VSEUtility.Alphabet[shotManager.ListOfShots.IndexOf(shot)].ToString());
-                    shot.TriggerObject.transform.parent = shotManager.transform;
-                    shot.TriggerObject.AddComponent(typeof(ShotTrigger));
-                    shot.TriggerObject.SetActive(shotManager.ToggleShotTriggerDisplay);
-
-                    UpdateTriggerPosition(shot);
-                }
-            }
+            int countDifference = Mathf.Abs(shotManager.NumberOfShots - previousNumberOfShots);
+            shotManager.ListOfShots.RemoveRange(shotManager.ListOfShots.Count - countDifference, countDifference);
         }
-        else if (shotManager.NumberOfShots < previousNumberOfShots)
+        else // Subtract
         {
-            for (var i = shotManager.transform.childCount - 1; i >= shotManager.NumberOfShots; i--)
+            for (int i = shotManager.transform.childCount - 1; i >= shotManager.NumberOfShots; i--)
                 DestroyImmediate(shotManager.transform.GetChild(i).gameObject);
         }
-
-        for (int i = 0; i < shotManager.ListOfShots.Count; i++)
-        {
-            if (shotManager.ListOfShots[i].TriggerObject != null)
-                UpdateTriggerPosition(shotManager.ListOfShots[i]);
-        }
-
-        UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
     }
 }
