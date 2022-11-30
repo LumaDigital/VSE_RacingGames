@@ -8,6 +8,7 @@ using UnityEditor.SceneManagement;
 
 public class RaceDataControls
 {
+    private const string RaceDataParentObjectName = "Global";
     private const string RaceDataGameObjectName = "Race Data";
     private const string ReloadSceneDialogTitle = "VSE: Load Race Scene";
     private const string ReloadSceneDialogMessage = "Changing Race Type/Track will require a scene reload.";
@@ -102,7 +103,16 @@ public class RaceDataControls
             if (GameObject.Find(RaceDataGameObjectName) is GameObject existingDataGameObject)
                 raceDataGameObject = existingDataGameObject;
             else
+            {
                 raceDataGameObject = new GameObject(RaceDataGameObjectName);
+
+                GameObject raceDataParentGameObject = GameObject.Find(RaceDataParentObjectName);
+                if (raceDataParentGameObject != null)
+                    raceDataGameObject.transform.parent = raceDataParentGameObject.transform;
+                else
+                    VSEEditorUtility.LogVSEWarning(RaceDataParentObjectName + " object does not exist! " +
+                        RaceDataGameObjectName + " generated with no parent!");
+            }
 
             Component racingGameComponent = raceDataGameObject.AddComponent(raceType);
             currentRacingGameData = racingGameComponent.GetComponent<RacingGame>();
