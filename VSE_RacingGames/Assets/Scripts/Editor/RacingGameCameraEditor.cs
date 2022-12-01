@@ -8,30 +8,9 @@ using CameraData;
 [CustomEditor(typeof(RacingGameCamera))]
 public class RacingGameCameraEditor : Editor
 {
-    private const float MinimumObstructionFovDifference = 10;
-    private const int MaximumDurationLabelPadding = -15;
-    private const int MinimumDurationLabelPadding = -10;
-
     private RacingGameCamera racingGameCamera;
     private ConstraintSource constraintSource = new ConstraintSource() { weight = 1 };
 
-    private GUIContent FovAnimationControlContent
-    {
-        get
-        {
-            if (fovAnimationControlContent == null)
-            {
-                fovAnimationControlContent = new GUIContent();
-                fovAnimationControlContent.text = "FOV Animation";
-                fovAnimationControlContent.tooltip = 
-                    "This slider is used to setup the FOV to animate from its current value on 'Play' to the " +
-                    "'Final FOV' of this component.\n\nThe animation duration is determined by the bar's size, " +
-                    "where the slider's length represents the shot's duration.";
-            }
-            return fovAnimationControlContent;
-        }
-    }
-    private GUIContent fovAnimationControlContent;
 
     private void OnEnable()
     {
@@ -67,58 +46,6 @@ public class RacingGameCameraEditor : Editor
         EditorGUI.EndDisabledGroup();
 
         EditorGUILayout.EndHorizontal();
-
-        if (racingGameCamera.ShotType == CameraShotType.LookAt)
-        {
-            Undo.RecordObject(racingGameCamera, nameof(racingGameCamera.FinalFov));
-            racingGameCamera.FinalFov = EditorGUILayout.FloatField("Final FOV", racingGameCamera.FinalFov);
-
-            EditorGUILayout.BeginHorizontal();
-
-            GUILayout.Label(FovAnimationControlContent);
-            EditorGUILayout.Space();
-
-            racingGameCamera.AnimatedFOVStart = 
-                EditorGUILayout.FloatField(racingGameCamera.AnimatedFOVStart, VSEEditorUtility.ThreeDigitWidthLayoutOption);
-            VSEEditorUtility.RoundOffToOneDecimals(ref racingGameCamera.AnimatedFOVStart);
-
-            Undo.RecordObject(racingGameCamera, nameof(racingGameCamera.AnimatedFOVStart) + "_" + nameof(racingGameCamera.AnimatedFOVEnd));
-            EditorGUILayout.MinMaxSlider(
-                ref racingGameCamera.AnimatedFOVStart,
-                ref racingGameCamera.AnimatedFOVEnd,
-                0,
-                100);
-
-            float fovStartEndDifference = racingGameCamera.AnimatedFOVEnd - racingGameCamera.AnimatedFOVStart;
-            fovStartEndDifference = (Mathf.Round(fovStartEndDifference * 10)) / 10;
-
-            float middleOfSliderPercentage = (racingGameCamera.AnimatedFOVStart + (fovStartEndDifference / 2)) / 100;
-
-            Rect sliderRectPosition = GUILayoutUtility.GetLastRect();
-            float yObstructionOffset = fovStartEndDifference < MinimumObstructionFovDifference ? sliderRectPosition.height / 2 : 0;
-
-            // Weird Unity behaviour: sliderRectPosition.x/y is zero, but hardcoding 0 as a argument results in the -
-            // control moving to the beginning of the inspector's width
-            sliderRectPosition = new Rect(
-                sliderRectPosition.x + (sliderRectPosition.width * middleOfSliderPercentage),
-                sliderRectPosition.y + yObstructionOffset,
-                sliderRectPosition.width,
-                sliderRectPosition.height);
-
-            racingGameCamera.AnimatedFOVEnd = 
-                EditorGUILayout.FloatField(racingGameCamera.AnimatedFOVEnd, VSEEditorUtility.ThreeDigitWidthLayoutOption);
-            racingGameCamera.AnimatedFOVEnd = (Mathf.Round(racingGameCamera.AnimatedFOVEnd * 10)) / 10;
-
-            EditorGUILayout.EndHorizontal();
-
-            // Account for label going off center as its drawn from its left anchor
-            GUIStyle offsetStyle = new GUIStyle();
-            offsetStyle.alignment = TextAnchor.MiddleLeft;
-            offsetStyle.padding.left = yObstructionOffset == 0 ? MaximumDurationLabelPadding : MinimumDurationLabelPadding;
-            offsetStyle.normal.textColor = Color.white;
-
-            GUI.Label(sliderRectPosition, fovStartEndDifference.ToString() + "%", offsetStyle);
-        }
     }
     private void EnableTargetParentConstraints()
     {
