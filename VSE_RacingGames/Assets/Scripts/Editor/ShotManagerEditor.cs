@@ -29,6 +29,9 @@ public class ShotManagerEditor : Editor
 
     public override void OnInspectorGUI()
     {
+        Undo.RecordObject(shotManager, nameof(shotManager.RunRaceShots));
+        shotManager.RunRaceShots = EditorGUILayout.Toggle("Run Shots", shotManager.RunRaceShots);
+
         Undo.RecordObject(shotManager, nameof(shotManager.NumberOfShots));
         shotManager.NumberOfShots = EditorGUILayout.IntField("Number of Shots", shotManager.NumberOfShots);
 
@@ -142,7 +145,7 @@ public class ShotManagerEditor : Editor
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.Label("Shot's Time:");
                 EditorGUILayout.FloatField((float)Math.Round((shot.ShotTime), 3), 
-                    GUILayout.Width(VSEEditorUtility.LargerUISpacer));
+                    GUILayout.Width(VSEEditorUtility.LargeUISpacer));
                 EditorGUILayout.EndHorizontal();
                 EditorGUI.EndDisabledGroup();
 

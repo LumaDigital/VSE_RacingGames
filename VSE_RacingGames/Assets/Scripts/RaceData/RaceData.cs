@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 
 using UnityEngine;
+using UnityEngine.Splines;
 
 public abstract class RacingGame : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public abstract class RacingGame : MonoBehaviour
 
     // Max and min number of racers vary per race type and modifier.
     // Some number of racers are excluded and these exlusions also vary.
-    public abstract int NumberOfRacers { get; set; }
+    public abstract int NumberOfRacers { get; set; } // VSE TODO: Still need to spawn racers based on this
     public abstract int MinimumRacerCount { get; }
     public abstract string[] RaceDistanceOptions { get; }
     public abstract string[] RaceTrackOptions { get; }
@@ -45,6 +46,25 @@ public abstract class RacingGame : MonoBehaviour
         {
             int index = RaceTrackOptions.ToList().IndexOf(RaceTrackName);
             return index < 0 ? 0 : index;
+        }
+    }
+
+    public SplineContainer CurrentRaceSplineContainer
+    {
+        get
+        {
+            foreach (SplineContainer splineContainer in FindObjectsOfType<SplineContainer>())
+            {
+                if (splineContainer.name.Contains(RaceDistance.ToString()))
+                {
+                    return splineContainer;
+                }
+            }
+
+            VSEEditorUtility.LogVSEError("No Track Spline with " + RaceDistance + " in the name.\n" +
+                "Ensure the selected distance has a corresponding Spline Container or change the distance.");
+
+            return null;
         }
     }
 

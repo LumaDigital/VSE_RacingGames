@@ -12,6 +12,7 @@ public class ShotManager : MonoBehaviour
 {
     public List<ShotData> ListOfShots = new List<ShotData>();
     public bool ToggleShotTriggerDisplay = true;
+    public bool RunRaceShots;
     public int NumberOfShots;
 
     private int triggerShotIndex;
@@ -65,6 +66,12 @@ public class ShotManager : MonoBehaviour
 
     private void Update()
     {
+        if (RunRaceShots)
+            HandleShots();
+    }
+
+    private void HandleShots()
+    {
         if (HorseDistance != null && ListOfShots.Count > 0)
         {
             horsePosition = HorseDistance.splineLength * HorseDistance.splineNormalizedTime;
@@ -92,7 +99,7 @@ public class ShotManager : MonoBehaviour
         }
     }
 
-    void ActivateShotCameraAndEntities(int triggerShotIndex)
+    private void ActivateShotCameraAndEntities(int triggerShotIndex)
     {
         if (triggerShotIndex > 0)
             DeactivatePreviousShotCameraAndEntities(triggerShotIndex);
@@ -112,7 +119,7 @@ public class ShotManager : MonoBehaviour
         }
     }
 
-    void DeactivatePreviousShotCameraAndEntities(int triggerShotIndex)
+    private void DeactivatePreviousShotCameraAndEntities(int triggerShotIndex)
     {
         if (ListOfShots[triggerShotIndex - 1].CameraComponent != null)
             ListOfShots[triggerShotIndex - 1].CameraComponent.enabled = false;

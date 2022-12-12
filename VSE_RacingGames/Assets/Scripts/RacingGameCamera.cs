@@ -13,10 +13,12 @@ namespace CameraData
     [RequireComponent(typeof(Camera), typeof(ParentConstraint))]
     public class RacingGameCamera : MonoBehaviour
     {
+        public bool FocusCameraAfterEditorMove;
         public CameraShotType ShotType;
         public Transform TargetTransform;
+
+        private ConstraintSource constraintSource = new ConstraintSource() { weight = 1 };
         public ShotData ShotData;
-        private Camera cameraComponent;
 
         public ShotManager ShotManager
         {
@@ -43,11 +45,6 @@ namespace CameraData
         }
         private ParentConstraint parentConstraint;
 
-        private void Start()
-        {
-            cameraComponent = GetComponent<Camera>();
-        }
-
         private void Update()
         {
             if (TargetTransform != null)
@@ -63,6 +60,22 @@ namespace CameraData
         {
             Vector3 lookDirection = TargetTransform.position - transform.position;
             transform.rotation = Quaternion.LookRotation(lookDirection);
+        }
+
+        public void EnableTargetParentConstraints()
+        {
+            if (TargetTransform != null)
+            {
+                if (ParentConstraint.sourceCount == 0) // new
+                    ParentConstraint.constraintActive = true;
+                else if (TargetTransform != constraintSource.sourceTransform) // reset
+                    ParentConstraint.RemoveSource(index: 0);
+                else // same selection
+                    return;
+
+                constraintSource.sourceTransform = TargetTransform;
+                ParentConstraint.AddSource(constraintSource);
+            }
         }
     }
 }

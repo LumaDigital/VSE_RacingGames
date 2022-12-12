@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class VSEUtility
 {
     public const string Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    public const float OnePercentFloat = 0.01f;
 
     public static GUIStyle TriggerLabelStyle
     {
@@ -24,5 +26,12 @@ public class VSEUtility
             currentValue = maximumValue;
 
         return currentValue;
+    }
+
+    public static void OrientTransformToSpline(Transform transform, SplineContainer splineContainer)
+    {
+        transform.position = splineContainer.EvaluatePosition(0);
+        Vector3 lookDirection = (Vector3)splineContainer.EvaluatePosition(OnePercentFloat) - transform.position;
+        transform.rotation = Quaternion.LookRotation(lookDirection);
     }
 }

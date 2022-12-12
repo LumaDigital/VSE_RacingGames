@@ -1,12 +1,14 @@
+using UnityEditor;
 using UnityEngine;
 
 public static class VSEEditorUtility
 {
     public const string UnitySceneExtension = ".unity";
 
+    private const string NotificationPrefix = "|| VSE NOTIFICATION || ";
     private const string WarningPrefix = "|| VSE WARNING || ";
+    private const string ErrorPrefix = "|| VSE ERROR || ";
 
-    public const float LargerUISpacer = 50f;
     public const float LargeUISpacer = 20f;
     public const float MediumUISpacer = LargeUISpacer / 2;
     public const float SmallUISpacer = (LargeUISpacer / 4) + 1;
@@ -20,6 +22,7 @@ public static class VSEEditorUtility
             GUIStyle style = new GUIStyle();
             style.fontSize = 25;
             style.normal.textColor = DescriptionLabelColour;
+            style.wordWrap = true;
 
             return style;
         }
@@ -33,6 +36,7 @@ public static class VSEEditorUtility
             style.fontSize = 15;
             style.fontStyle = FontStyle.Bold;
             style.normal.textColor = Color.red;
+            style.wordWrap = true;
 
             return style;
         }
@@ -58,9 +62,20 @@ public static class VSEEditorUtility
         }
     }
 
+    public static void LogVSENotification(string errorMessage)
+    {
+        Debug.Log(NotificationPrefix + errorMessage);
+    }
+
     public static void LogVSEWarning(string errorMessage)
     {
         Debug.LogWarning(WarningPrefix + errorMessage);
+    }
+
+    public static void LogVSEError(string errorMessage)
+    {
+        Debug.LogError(ErrorPrefix + errorMessage);
+        EditorApplication.isPlaying = false;
     }
 
     public static void RoundOffToOneDecimals(ref float value)

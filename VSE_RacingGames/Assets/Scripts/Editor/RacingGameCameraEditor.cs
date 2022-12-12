@@ -9,8 +9,6 @@ using CameraData;
 public class RacingGameCameraEditor : Editor
 {
     private RacingGameCamera racingGameCamera;
-    private ConstraintSource constraintSource = new ConstraintSource() { weight = 1 };
-
 
     private void OnEnable()
     {
@@ -19,13 +17,21 @@ public class RacingGameCameraEditor : Editor
 
     public override void OnInspectorGUI()
     {
+        if (!Application.isPlaying && racingGameCamera.ParentConstraint.locked)
+        {
+            VSEEditorUtility.LogVSEWarning("Parent Constraint 'lock activate' permission denied." +
+                "\nRacing cameras can't have their constraints locked.");
+
+            racingGameCamera.ParentConstraint.locked = false;
+        }
+
         EditorGUI.BeginChangeCheck();
         Undo.RecordObject(racingGameCamera, nameof(racingGameCamera.ShotType));
         racingGameCamera.ShotType = (CameraShotType)EditorGUILayout.EnumPopup("Shot Type", racingGameCamera.ShotType);
         if (EditorGUI.EndChangeCheck())
         {
             if (racingGameCamera.ShotType == CameraShotType.Follow)
-                EnableTargetParentConstraints();
+                racingGameCamera.EnableTargetParentConstraints();
             else
                 DisableTargetParentConstraints();
         }
@@ -37,29 +43,22 @@ public class RacingGameCameraEditor : Editor
         racingGameCamera.TargetTransform =
             (Transform)EditorGUILayout.ObjectField("Target Transform", racingGameCamera.TargetTransform, typeof(Transform), true);
         if (EditorGUI.EndChangeCheck() && racingGameCamera.ShotType == CameraShotType.Follow)
-            EnableTargetParentConstraints();
+            racingGameCamera.EnableTargetParentConstraints();
 
         EditorGUI.BeginDisabledGroup(racingGameCamera.TargetTransform == null);
         Undo.RecordObject(racingGameCamera.transform, nameof(racingGameCamera.transform.rotation));
         if (GUILayout.Button("Focus"))
             racingGameCamera.LookAtTarget();
         EditorGUI.EndDisabledGroup();
-
         EditorGUILayout.EndHorizontal();
-    }
-    private void EnableTargetParentConstraints()
-    {
-        if (racingGameCamera.TargetTransform != null)
-        {
-            if (racingGameCamera.ParentConstraint.sourceCount == 0) // new
-                racingGameCamera.ParentConstraint.constraintActive = true;
-            else if (racingGameCamera.TargetTransform != constraintSource.sourceTransform) // reset
-                racingGameCamera.ParentConstraint.RemoveSource(index: 0);
-            else // same selection
-                return;
 
-            constraintSource.sourceTransform = racingGameCamera.TargetTransform;
-            racingGameCamera.ParentConstraint.AddSource(constraintSource);
+        racingGameCamera.FocusCameraAfterEditorMove =
+            EditorGUILayout.Toggle("Focuse Camera After Editor Move", racingGameCamera.FocusCameraAfterEditorMove);
+
+        if (racingGameCamera.FocusCameraAfterEditorMove && racingGameCamera.transform.hasChanged)
+        {
+            racingGameCamera.transform.hasChanged = false;
+            racingGameCamera.LookAtTarget();
         }
     }
 
