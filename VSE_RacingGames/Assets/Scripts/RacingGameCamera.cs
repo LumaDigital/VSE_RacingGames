@@ -66,15 +66,16 @@ namespace CameraData
         {
             if (TargetTransform != null)
             {
-                if (ParentConstraint.sourceCount == 0) // new
-                    ParentConstraint.constraintActive = true;
-                else if (TargetTransform != constraintSource.sourceTransform) // reset
-                    ParentConstraint.RemoveSource(index: 0);
-                else // same selection
-                    return;
-
                 constraintSource.sourceTransform = TargetTransform;
-                ParentConstraint.AddSource(constraintSource);
+
+                if (ParentConstraint.sourceCount == 0) // new
+                {
+                    ParentConstraint.constraintActive = true;
+                    ParentConstraint.AddSource(constraintSource);
+                }
+                else
+                    ParentConstraint.SetSource(index: 0, source: constraintSource);
+
             }
         }
     }

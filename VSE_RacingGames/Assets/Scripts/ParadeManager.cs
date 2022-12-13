@@ -205,7 +205,10 @@ namespace Parade
                     {
                         racerSplineAnimate.gameObject.SetActive(enableFirstRacer);
                         if (enableFirstRacer)
+                        {
+                            HandleRacerParentConstraint(racerSplineAnimate.transform);
                             enableFirstRacer = false;
+                        }
                     }
 
                     racerSplineAnimate.splineContainer = ParadeSplineContainer;
@@ -272,6 +275,17 @@ namespace Parade
             racerSplineAnimates = racerSplineAnimates.Where(item => item.name != ParadeCameraTargetName).ToList();
         }
 
+        public void SetupParadeAnimatorController(bool overrideCurrent = false)
+        {
+            if (overrideCurrent || CameraAnimator.runtimeAnimatorController == null)
+            {
+                CameraAnimator.runtimeAnimatorController =
+                    (RuntimeAnimatorController)AssetDatabase.LoadAssetAtPath(
+                        GetStationaryAnimatorControllerPath,
+                        typeof(RuntimeAnimatorController));
+            }
+        }
+
         private void CheckRacerAvailability()
         {
             if (RacingGameData.NumberOfRacers > racerSplineAnimates.Count)
@@ -309,6 +323,7 @@ namespace Parade
                         HandleStationaryCameraAnimation();
                     }
 
+                    HandleRacerParentConstraint(racerSplineAnimates[racerIndex].transform);
                     racerSplineAnimates[racerIndex].gameObject.SetActive(true);
                     racerSplineAnimates[racerIndex].elapsedTime = 0;
                     CameraTargetSplineAnimate.elapsedTime = 0;
@@ -355,14 +370,12 @@ namespace Parade
             ParadeCamera.transform.rotation = originalCameraRotation;
         }
 
-        public void SetupParadeAnimatorController(bool overrideCurrent = false)
+        private void HandleRacerParentConstraint(Transform racerTransform)
         {
-            if (overrideCurrent || CameraAnimator.runtimeAnimatorController == null)
+            if (ParadeType == ParadeTypes.Ring)
             {
-                CameraAnimator.runtimeAnimatorController =
-                    (RuntimeAnimatorController)AssetDatabase.LoadAssetAtPath(
-                        GetStationaryAnimatorControllerPath,
-                        typeof(RuntimeAnimatorController));
+                ParadeCamera.TargetTransform = racerTransform;
+                ParadeCamera.EnableTargetParentConstraints();
             }
         }
     }
