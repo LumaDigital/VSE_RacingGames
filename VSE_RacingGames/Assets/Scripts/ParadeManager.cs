@@ -131,6 +131,13 @@ namespace Parade
                 }
 
                 CameraAnimator.runtimeAnimatorController = OverrideController;
+                if (OverrideController.animationClips.Length <= 0)
+                {
+                    VSEEditorUtility.LogVSEError("'" + StationaryClipName + "' is missing its animation motion.\n" +
+                        "Please assign a motion to the default state of the Parade controller and try again.");
+                    return;
+                }
+
                 overrideableClipName = OverrideController.animationClips[0].name;
             }
 
