@@ -27,9 +27,9 @@ namespace Parade
         private const string ParadeSplineObjectName = "Parade Spline";
         private const string StationaryClipName = "Overridable_Clip";
 
-        private const int RingParadeSplineLength = 200;
         private const float RingParadeSpeed = 10;
 
+        public float ParadeTime = 30;
         public float ParadeShotTime = 5;
 
         [HideInInspector]
@@ -53,9 +53,10 @@ namespace Parade
         private Vector3 originalCameraPosition;
         private Quaternion originalCameraRotation;
 
+        private float paradeTimer;
+        private int paradeMultiplier = 1;
         private int stationaryAnimationIndex;
         private int racerIndex;
-        private float paradeTimer;
 
         public string GetStationaryAnimatorControllerPath
         {
@@ -137,7 +138,7 @@ namespace Parade
             CheckRacerAvailability();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             HandleParade();
         }
@@ -286,18 +287,21 @@ namespace Parade
             if (ParadeSetToPlay)
             {
                 paradeTimer += Time.deltaTime;
-                if (paradeTimer > ParadeShotTime)
+                if (paradeTimer > ParadeTime)
+                {
+                    gameObject.SetActive(false);
+                    ReturnRacersToRaceTrack();
+                    shotManager.RunRaceShots = true;
+
+                    return;
+                }
+
+                if (paradeTimer > ParadeShotTime * paradeMultiplier)
                 {
                     racerSplineAnimates[racerIndex].gameObject.SetActive(false);
-                    racerIndex++;// VSE TODO: Remove when racedata adds racers
+                    racerIndex++;
                     if (racerIndex + 1 > RacingGameData.NumberOfRacers)
-                    {
-                        gameObject.SetActive(false);
-                        ReturnRacersToRaceTrack();
-                        shotManager.RunRaceShots = true;
-
-                        return;
-                    }
+                        racerIndex = 0;
 
                     if (ParadeType == ParadeTypes.Stationary)
                     {
@@ -306,8 +310,9 @@ namespace Parade
                     }
 
                     racerSplineAnimates[racerIndex].gameObject.SetActive(true);
+                    racerSplineAnimates[racerIndex].elapsedTime = 0;
                     CameraTargetSplineAnimate.elapsedTime = 0;
-                    paradeTimer = 0;
+                    paradeMultiplier++;
                 }
             }
         }
