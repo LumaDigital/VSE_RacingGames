@@ -1,0 +1,679 @@
+fileFormatVersion: 2
+guid: 97330b8b5258f4747a27709ffbf9f099
+ModelImporter:
+  fileIDToRecycleName:
+    4300000: Greyghound_Rig_2:European_Greyhound1:EuropeanGreyhound
+    4300002: teeth1:polySurface1
+    4300004: polySurface1
+    4300006: polySurface2
+    4300008: pSphere6
+    4300010: pSphere5
+    4300012: teeth1:polySurface2
+    4300014: pCube1
+    4300016: pSphere7
+    7400000: Greyound_Model_Reskin7 //// greyhound_European_New
+    7400002: idle //// greyhound_European_New
+    7400004: idle0 //// greyhound_European_New
+    7400006: idle1 //// greyhound_European_New
+    7400008: idle2 //// greyhound_European_New
+    7400010: idle3 //// greyhound_European_New
+    7400012: idle4 //// greyhound_European_New
+    7400014: idle5 //// greyhound_European_New
+    7400016: ' //// greyhound_European_New'
+    7400018: Start_1 //// greyhound_European_New
+    7400020: Look Left //// greyhound_European_New
+    7400022: Look Right //// greyhound_European_New
+    7400024: Idle //// greyhound_European_New
+    7400026: Start_01 //// greyhound_European_New
+    7400028: Start_02 //// greyhound_European_New
+    7400030: Start_03 //// greyhound_European_New
+    7400032: Idle_01 //// greyhound_European_New
+    7400034: Idle_02 //// greyhound_European_New
+    7400036: Idle_03 //// greyhound_European_New
+    7400038: Idle_04 //// greyhound_European_New
+    7400040: Start_gate //// greyhound_European_New
+    7400042: Idle_05 //// greyhound_European_New
+    7400044: Idle_06 //// greyhound_European_New
+    7400046: Idle_07 //// greyhound_European_New
+    7400048: Start_01 //// Root_Joint
+    7400050: Start_02 //// Root_Joint
+    7400052: Start_03 //// Root_Joint
+    7400054: Idle_01 //// Root_Joint
+    7400056: Idle_02 //// Root_Joint
+    7400058: Idle_03 //// Root_Joint
+    7400060: Idle_04 //// Root_Joint
+    7400062: Idle_05 //// Root_Joint
+    7400064: Idle_06 //// Root_Joint
+    7400066: Idle_07 //// Root_Joint
+    7400068: Start_01 //// group_mesh
+    7400070: Start_02 //// group_mesh
+    7400072: Start_03 //// group_mesh
+    7400074: Idle_01 //// group_mesh
+    7400076: Idle_02 //// group_mesh
+    7400078: Idle_03 //// group_mesh
+    7400080: Idle_04 //// group_mesh
+    7400082: Idle_05 //// group_mesh
+    7400084: Idle_06 //// group_mesh
+    7400086: Idle_07 //// group_mesh
+    7400088: Idle //// greyhound_European_New
+    7400090: Idle //// greyhound_European_New
+    7400092: Idle //// greyhound_European_New
+    7400094: Idle //// greyhound_European_New
+    7400096: Idle //// greyhound_European_New
+    7400098: Idle //// greyhound_European_New
+    7400100: Idle_01 //// greyhound_European_New
+    7400102: Idle_01 //// greyhound_European_New
+    7400104: Idle_01 //// greyhound_European_New
+    7400106: Idle_01 //// greyhound_European_New
+    7400108: Idle_01 //// greyhound_European_New
+    7400110: IdleIdle_01 //// greyhound_European_New
+    7400112: Idle_01 //// greyhound_European_New
+    7400114: Run_01 //// greyhound_European_New
+    7400116: Run_02 //// greyhound_European_New
+    7400118: Run_03 //// greyhound_European_New
+  serializedVersion: 10
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    generateAnimations: 3
+    bakeSimulation: 0
+    splitAnimations: 1
+    animationCompression: 0
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations:
+    - name: Run_01
+      firstFrame: 10
+      lastFrame: 34
+      wrapMode: 2
+      loop: 0
+    - name: Run_02
+      firstFrame: 40
+      lastFrame: 64
+      wrapMode: 2
+      loop: 0
+    - name: Run_03
+      firstFrame: 70
+      lastFrame: 94
+      wrapMode: 2
+      loop: 0
+    - name: Idle_01
+      firstFrame: 100
+      lastFrame: 388
+      wrapMode: 2
+      loop: 0
+    - name: Idle_02
+      firstFrame: 400
+      lastFrame: 688
+      wrapMode: 2
+      loop: 0
+    - name: Idle_03
+      firstFrame: 700
+      lastFrame: 988
+      wrapMode: 2
+      loop: 0
+    - name: Idle_04
+      firstFrame: 1000
+      lastFrame: 1288
+      wrapMode: 2
+      loop: 0
+    - name: Idle_05
+      firstFrame: 1300
+      lastFrame: 1588
+      wrapMode: 2
+      loop: 0
+    - name: Idle_06
+      firstFrame: 1600
+      lastFrame: 1888
+      wrapMode: 2
+      loop: 0
+    - name: Idle_07
+      firstFrame: 1900
+      lastFrame: 2188
+      wrapMode: 2
+      loop: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMesh: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  textMetaNamesToFileIDs:
+    //RootNode:
+      data:
+        first: 1
+        second: d8860100
+      data:
+        first: 4
+        second: b81a0600
+      data:
+        first: 111
+        second: 605fa900
+    Centre_Head_Joint:
+      data:
+        first: 1
+        second: a6860100
+      data:
+        first: 4
+        second: 861a0600
+    Centre__Chest__Joint:
+      data:
+        first: 1
+        second: 0a870100
+      data:
+        first: 4
+        second: ea1a0600
+    Front_Left_Ankle_Joint:
+      data:
+        first: 1
+        second: fc860100
+      data:
+        first: 4
+        second: dc1a0600
+    Front_Left_Elbow_Joint:
+      data:
+        first: 1
+        second: f6860100
+      data:
+        first: 4
+        second: d61a0600
+    Front_Left_Foot_Tip:
+      data:
+        first: 1
+        second: cc860100
+      data:
+        first: 4
+        second: ac1a0600
+    Front_Left_Heel_Joint:
+      data:
+        first: 1
+        second: fa860100
+      data:
+        first: 4
+        second: da1a0600
+    Front_Left_Shoulder_Joint:
+      data:
+        first: 1
+        second: f8860100
+      data:
+        first: 4
+        second: d81a0600
+    Front_Left_Toe_Joint:
+      data:
+        first: 1
+        second: ce860100
+      data:
+        first: 4
+        second: ae1a0600
+    Front_Right_Ankle_Joint:
+      data:
+        first: 1
+        second: bc860100
+      data:
+        first: 4
+        second: 9c1a0600
+    Front_Right_Elbow_Joint:
+      data:
+        first: 1
+        second: a0860100
+      data:
+        first: 4
+        second: 801a0600
+    Front_Right_Foot_Tip:
+      data:
+        first: 1
+        second: b4860100
+      data:
+        first: 4
+        second: 941a0600
+    Front_Right_Heel_Joint:
+      data:
+        first: 1
+        second: ba860100
+      data:
+        first: 4
+        second: 9a1a0600
+    Front_Right_Shoulder_Joint:
+      data:
+        first: 1
+        second: a2860100
+      data:
+        first: 4
+        second: 821a0600
+    Front_Right_Toe_Joint:
+      data:
+        first: 1
+        second: b2860100
+      data:
+        first: 4
+        second: 921a0600
+    Greyghound_Rig_2:European_Greyhound1:EuropeanGreyhound:
+      data:
+        first: 1
+        second: be860100
+      data:
+        first: 4
+        second: 9e1a0600
+      data:
+        first: 137
+        second: a20bd100
+    Jaw_Joint:
+      data:
+        first: 1
+        second: b6860100
+      data:
+        first: 4
+        second: 961a0600
+    Jaw_Tip:
+      data:
+        first: 1
+        second: 1c870100
+      data:
+        first: 4
+        second: fc1a0600
+    Left_Ear_Joint_1:
+      data:
+        first: 1
+        second: 16870100
+      data:
+        first: 4
+        second: f61a0600
+    Left_Ear_Joint_2:
+      data:
+        first: 1
+        second: 14870100
+      data:
+        first: 4
+        second: f41a0600
+    Left_Ear_Tip:
+      data:
+        first: 1
+        second: ca860100
+      data:
+        first: 4
+        second: aa1a0600
+    Left_Eyebrow_Joint:
+      data:
+        first: 1
+        second: c2860100
+      data:
+        first: 4
+        second: a21a0600
+    Left_Rear_Ankle_Joint:
+      data:
+        first: 1
+        second: f0860100
+      data:
+        first: 4
+        second: d01a0600
+    Left_Rear_Foot_Tip:
+      data:
+        first: 1
+        second: fe860100
+      data:
+        first: 4
+        second: de1a0600
+    Left_Rear_Heel_Joint:
+      data:
+        first: 1
+        second: 02870100
+      data:
+        first: 4
+        second: e21a0600
+    Left_Rear_Hip_Joint:
+      data:
+        first: 1
+        second: f4860100
+      data:
+        first: 4
+        second: d41a0600
+    Left_Rear_Knee_Joint:
+      data:
+        first: 1
+        second: f2860100
+      data:
+        first: 4
+        second: d21a0600
+    Left_Rear_Toe_Joint:
+      data:
+        first: 1
+        second: 00870100
+      data:
+        first: 4
+        second: e01a0600
+    Neck_Joint_1:
+      data:
+        first: 1
+        second: 04870100
+      data:
+        first: 4
+        second: e41a0600
+    Neck_Joint_2:
+      data:
+        first: 1
+        second: e2860100
+      data:
+        first: 4
+        second: c21a0600
+    Nose_Tip:
+      data:
+        first: 1
+        second: 1a870100
+      data:
+        first: 4
+        second: fa1a0600
+    Right_Ear_Joint_1:
+      data:
+        first: 1
+        second: a4860100
+      data:
+        first: 4
+        second: 841a0600
+    Right_Ear_Joint_2:
+      data:
+        first: 1
+        second: b0860100
+      data:
+        first: 4
+        second: 901a0600
+    Right_Ear_Joint_Tip:
+      data:
+        first: 1
+        second: ae860100
+      data:
+        first: 4
+        second: 8e1a0600
+    Right_Eyebrow_Joint:
+      data:
+        first: 1
+        second: c0860100
+      data:
+        first: 4
+        second: a01a0600
+    Right_Rear_Ankle_Joint:
+      data:
+        first: 1
+        second: d4860100
+      data:
+        first: 4
+        second: b41a0600
+    Right_Rear_Foot_Tip:
+      data:
+        first: 1
+        second: e6860100
+      data:
+        first: 4
+        second: c61a0600
+    Right_Rear_Heel_Joint:
+      data:
+        first: 1
+        second: ea860100
+      data:
+        first: 4
+        second: ca1a0600
+    Right_Rear_Hip_Joint:
+      data:
+        first: 1
+        second: da860100
+      data:
+        first: 4
+        second: ba1a0600
+    Right_Rear_Knee_Joint:
+      data:
+        first: 1
+        second: d6860100
+      data:
+        first: 4
+        second: b61a0600
+    Right_Rear_Toe_Joint:
+      data:
+        first: 1
+        second: e8860100
+      data:
+        first: 4
+        second: c81a0600
+    Root_Joint:
+      data:
+        first: 1
+        second: c8860100
+      data:
+        first: 4
+        second: a81a0600
+    Tail_1:
+      data:
+        first: 1
+        second: d2860100
+      data:
+        first: 4
+        second: b21a0600
+    Tail_2:
+      data:
+        first: 1
+        second: d0860100
+      data:
+        first: 4
+        second: b01a0600
+    Tail_3:
+      data:
+        first: 1
+        second: dc860100
+      data:
+        first: 4
+        second: bc1a0600
+    Tail_4:
+      data:
+        first: 1
+        second: ee860100
+      data:
+        first: 4
+        second: ce1a0600
+    Tail_5:
+      data:
+        first: 1
+        second: ec860100
+      data:
+        first: 4
+        second: cc1a0600
+    Tail_6:
+      data:
+        first: 1
+        second: 12870100
+      data:
+        first: 4
+        second: f21a0600
+    Tail_7:
+      data:
+        first: 1
+        second: c6860100
+      data:
+        first: 4
+        second: a61a0600
+    Tail_Start:
+      data:
+        first: 1
+        second: 18870100
+      data:
+        first: 4
+        second: f81a0600
+    Tail_Tip:
+      data:
+        first: 1
+        second: c4860100
+      data:
+        first: 4
+        second: a41a0600
+    Tongue_Joint_1:
+      data:
+        first: 1
+        second: b8860100
+      data:
+        first: 4
+        second: 981a0600
+    Tongue_Joint_2:
+      data:
+        first: 1
+        second: 08870100
+      data:
+        first: 4
+        second: e81a0600
+    Tongue_Joint_3:
+      data:
+        first: 1
+        second: 06870100
+      data:
+        first: 4
+        second: e61a0600
+    Tongue_Joint_4:
+      data:
+        first: 1
+        second: 0c870100
+      data:
+        first: 4
+        second: ec1a0600
+    Tongue_Tip:
+      data:
+        first: 1
+        second: e4860100
+      data:
+        first: 4
+        second: c41a0600
+    Vertibra_1:
+      data:
+        first: 1
+        second: ac860100
+      data:
+        first: 4
+        second: 8c1a0600
+    Vertibra_2:
+      data:
+        first: 1
+        second: aa860100
+      data:
+        first: 4
+        second: 8a1a0600
+    Vertibra_3:
+      data:
+        first: 1
+        second: e0860100
+      data:
+        first: 4
+        second: c01a0600
+    Vertibra_4:
+      data:
+        first: 1
+        second: de860100
+      data:
+        first: 4
+        second: be1a0600
+    Vertibra_5:
+      data:
+        first: 1
+        second: 10870100
+      data:
+        first: 4
+        second: f01a0600
+    Vertibra_Final:
+      data:
+        first: 1
+        second: 0e870100
+      data:
+        first: 4
+        second: ee1a0600
+    group_mesh:
+      data:
+        first: 1
+        second: 24870100
+      data:
+        first: 4
+        second: 041b0600
+    pCube1:
+      data:
+        first: 1
+        second: 28870100
+      data:
+        first: 4
+        second: 081b0600
+      data:
+        first: 137
+        second: a00bd100
+    pSphere5:
+      data:
+        first: 1
+        second: 20870100
+      data:
+        first: 4
+        second: 001b0600
+      data:
+        first: 23
+        second: 62182300
+      data:
+        first: 33
+        second: a25a3200
+    pSphere6:
+      data:
+        first: 1
+        second: a8860100
+      data:
+        first: 4
+        second: 881a0600
+      data:
+        first: 23
+        second: 60182300
+      data:
+        first: 33
+        second: a05a3200
+    polySurface1:
+      data:
+        first: 1
+        second: 1e870100
+      data:
+        first: 4
+        second: fe1a0600
+      data:
+        first: 23
+        second: 68182300
+      data:
+        first: 33
+        second: a85a3200
+    polySurface2:
+      data:
+        first: 1
+        second: 22870100
+      data:
+        first: 4
+        second: 021b0600
+      data:
+        first: 23
+        second: 66182300
+      data:
+        first: 33
+        second: a65a3200
+    teeth1:polySurface1:
+      data:
+        first: 1
+        second: 26870100
+      data:
+        first: 4
+        second: 061b0600
+      data:
+        first: 23
+        second: 64182300
+      data:
+        first: 33
+        second: a45a3200
