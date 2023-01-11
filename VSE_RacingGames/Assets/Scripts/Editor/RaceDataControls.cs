@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -133,19 +134,45 @@ public class RaceDataControls
 
     public static void LoadTrackScene(ref RacingGame currentRacingGameData, Type raceType)
     {
-        string raceTypeDirectory = Path.Join(Path.Join("Assets", "Scenes"), raceType.Name);
-        if (!Directory.Exists(raceTypeDirectory))
+        string raceDirectory = string.Empty;
+        foreach (KeyValuePair<string, string> raceTypeDirectory in VSEEditorUtility.RaceTypeDirectories)
         {
-            LogMissingPathWarning(raceTypeDirectory);
+            if (raceTypeDirectory.Key.Equals(raceType.Name))
+            {
+                raceDirectory = raceTypeDirectory.Value;
+            }
+        }
+
+        if (!Directory.Exists(raceDirectory))
+        {
+            LogMissingPathWarning(raceDirectory.Equals(string.Empty) ?
+                "Directory not assigned" :
+                raceDirectory);
             return;
         }
 
-        string raceTrackDirectory = Path.Join(raceTypeDirectory, currentRacingGameData.RaceTrackName);
-        string raceTrackPath =
-            Path.Join(raceTrackDirectory, currentRacingGameData.RaceTrackName + VSEEditorUtility.UnitySceneExtension);
+        string raceTrackPath = string.Empty;
+        string[] raceSceneFiles = Directory.GetFiles(
+            raceDirectory,
+            "*" + VSEEditorUtility.UnitySceneExtension,
+            SearchOption.AllDirectories);
+
+        foreach (string raceSceneFile in raceSceneFiles)
+        {
+            if (raceSceneFile.Contains(currentRacingGameData.RaceTrackName))
+            {
+                raceTrackPath = raceSceneFile;
+                break;
+            }
+
+            raceTrackPath = raceDirectory;
+        }
+
         if (!File.Exists(raceTrackPath))
         {
-            LogMissingPathWarning(raceTrackPath);
+            LogMissingPathWarning(raceDirectory.Equals(string.Empty) ?
+                "Directory not assigned" :
+                "No scene named '" + currentRacingGameData.RaceTrackName + "' in " + raceDirectory);
             return;
         }
 

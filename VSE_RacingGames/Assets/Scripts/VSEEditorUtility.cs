@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public static class VSEEditorUtility
@@ -12,6 +13,18 @@ public static class VSEEditorUtility
     public const float SmallUISpacer = (LargeUISpacer / 4) + 1;
 
     public static Color32 DescriptionLabelColour = new Color32(96, 219, 127, 255);
+
+    public static readonly Dictionary<string, string> RaceTypeDirectories = new()
+    {
+        { "Thoroughbreds", string.Empty },
+        { "Greyhounds", string.Empty },
+        { "Harness", string.Empty },
+        { "Cycling", string.Empty },
+        { "SpeedSkating", string.Empty },
+        { "IndyRacing", string.Empty },
+        { "MotorRacing", string.Empty },
+        { "SteepleChase", string.Empty }
+    };
 
     public static GUIStyle DescriptionLabelStyle
     {
