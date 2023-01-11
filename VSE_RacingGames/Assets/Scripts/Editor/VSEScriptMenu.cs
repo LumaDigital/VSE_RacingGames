@@ -27,9 +27,9 @@ public class VSEScriptMenu
     }
 
     [MenuItem("VSE/Add Components/Racer's Progress Display")]
-    public static void AddHorseDistanceComponent()
+    public static void AddRacerDistanceComponent()
     {
-        AddComponentToSelectedObject(typeof(HorseDistance), typeof(SplineAnimate));
+        AddComponentToSelectedObject(typeof(RacerDistance), typeof(SplineAnimate));
     }
     
     [MenuItem("VSE/Add Components/Racing Game Camera")]

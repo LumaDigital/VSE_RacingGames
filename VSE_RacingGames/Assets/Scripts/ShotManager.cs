@@ -16,7 +16,7 @@ public class ShotManager : MonoBehaviour
 
     private int triggerShotIndex;
     private bool hitLastTrigger;
-    private float horsePosition;
+    private float racerPosition;
     private bool requireComponent;
 
     public SplineLength SplineLength
@@ -30,16 +30,16 @@ public class ShotManager : MonoBehaviour
     }
     private SplineLength splineLength;
 
-    public HorseDistance HorseDistance
+    public RacerDistance RacerDistance
     {
         get
         {
-            if (horseDistance == null)
-                horseDistance = GameObject.FindObjectOfType<HorseDistance>();
-            return horseDistance;
+            if (racerDistance == null)
+                racerDistance = GameObject.FindObjectOfType<RacerDistance>();
+            return racerDistance;
         }
     }
-    private HorseDistance horseDistance;
+    private RacerDistance racerDistance;
 
     public SplineContainer SplineContainer
     {
@@ -65,10 +65,10 @@ public class ShotManager : MonoBehaviour
 
     private void Update()
     {
-        if (HorseDistance != null && ListOfShots.Count > 0)
+        if (RacerDistance != null && ListOfShots.Count > 0)
         {
-            horsePosition = HorseDistance.splineLength * HorseDistance.splineNormalizedTime;
-            if (horsePosition >= ListOfShots[triggerShotIndex].TriggerPosition && !hitLastTrigger)
+            racerPosition = RacerDistance.splineLength * RacerDistance.splineNormalizedTime;
+            if (racerPosition >= ListOfShots[triggerShotIndex].TriggerPosition && !hitLastTrigger)
             {
                 ActivateShotCameraAndEntities(triggerShotIndex);
 
@@ -78,14 +78,14 @@ public class ShotManager : MonoBehaviour
                     hitLastTrigger = true;
             }
         }
-        else if (HorseDistance == null && requireComponent == false)
+        else if (RacerDistance == null && requireComponent == false)
         {
-            if ((EditorUtility.DisplayDialog("Horse Requires Missing Component!",
-                "ShotManager requires the tracked horse to contain: " + typeof(HorseDistance),
+            if ((EditorUtility.DisplayDialog("Racer Requires Missing Component!",
+                "ShotManager requires the tracked racer to contain: " + typeof(RacerDistance),
                 "Add Missing Component",
                 "Cancel")))
             {
-                GameObject.Find("HorseAndJockey").AddComponent(typeof(HorseDistance));
+                SplineAnimate.gameObject.AddComponent(typeof(RacerDistance));
             }
 
             requireComponent = true;

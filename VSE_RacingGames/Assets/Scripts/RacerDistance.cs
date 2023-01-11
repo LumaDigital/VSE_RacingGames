@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Splines;
 
 [ExecuteInEditMode]
-public class HorseDistance : MonoBehaviour
+public class RacerDistance : MonoBehaviour
 {
     public SplineAnimate SplineAnimate
     {
